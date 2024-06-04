@@ -1,0 +1,1547 @@
+{
+  "last_node_id": 688,
+  "last_link_id": 1266,
+  "nodes": [
+    {
+      "id": 562,
+      "type": "Reroute",
+      "pos": [
+        800,
+        260
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "*",
+          "links": [],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "color": "#222",
+      "bgcolor": "#000",
+      "shape": 4
+    },
+    {
+      "id": 618,
+      "type": "Reroute",
+      "pos": [
+        800,
+        260
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1126
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "IMAGE",
+          "links": [
+            1127
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      },
+      "shape": 4
+    },
+    {
+      "id": 623,
+      "type": "PrimitiveNode",
+      "pos": [
+        0,
+        30
+      ],
+      "size": {
+        "0": 300,
+        "1": 320
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1173
+          ],
+          "label": "Positive Prompt",
+          "slot_index": 0,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "title": "Positive",
+      "properties": {},
+      "widgets_values": [
+        "an epic cinematic photo of a lone pirate ship sailing a stormy ocean, rough waves, midnight, thunderstorm and lightning, chiaroscuro,contrasting, detailed, 8k, Sony HDC-F5500"
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": 4
+    },
+    {
+      "id": 624,
+      "type": "PrimitiveNode",
+      "pos": [
+        0,
+        390
+      ],
+      "size": {
+        "0": 300,
+        "1": 80
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            1137
+          ],
+          "widget": {
+            "name": "text"
+          },
+          "label": "Negative Prompt"
+        }
+      ],
+      "title": "Negative",
+      "properties": {},
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 4
+    },
+    {
+      "id": 551,
+      "type": "VAEDecode",
+      "pos": [
+        800,
+        240
+      ],
+      "size": {
+        "0": 320,
+        "1": 50
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1246,
+          "label": "Latent"
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1219,
+          "slot_index": 1,
+          "label": "Variable Auto Encoder"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1126,
+            1214
+          ],
+          "shape": 3,
+          "slot_index": 0,
+          "label": "Image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#222",
+      "bgcolor": "#000",
+      "shape": 4
+    },
+    {
+      "id": 614,
+      "type": "PrimitiveNode",
+      "pos": [
+        320,
+        390
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 82
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1133,
+            1251
+          ],
+          "widget": {
+            "name": "seed"
+          },
+          "slot_index": 0,
+          "label": "Seed"
+        }
+      ],
+      "title": "Seed                                ",
+      "properties": {},
+      "widgets_values": [
+        166799387527720,
+        "randomize"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 4
+    },
+    {
+      "id": 680,
+      "type": "KSampler",
+      "pos": [
+        1162,
+        24
+      ],
+      "size": {
+        "0": 320,
+        "1": 230
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1255,
+          "label": "Model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1265,
+          "label": "+"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1266,
+          "label": "-"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 1243,
+          "label": "Latent"
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 1249,
+          "widget": {
+            "name": "sampler_name"
+          },
+          "label": "Sampler Name"
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 1250,
+          "widget": {
+            "name": "scheduler"
+          },
+          "label": "Scheduler Name"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 1251,
+          "widget": {
+            "name": "seed"
+          },
+          "slot_index": 6,
+          "label": "Seed"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1252
+          ],
+          "slot_index": 0,
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1100277355462544,
+        "randomize",
+        15,
+        7.5,
+        "dpmpp_3m_sde_gpu",
+        "exponential",
+        0.5
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 4
+    },
+    {
+      "id": 310,
+      "type": "EmptyLatentImage",
+      "pos": [
+        660,
+        -170
+      ],
+      "size": {
+        "0": 320,
+        "1": 82
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "link": 1184,
+          "widget": {
+            "name": "batch_size"
+          },
+          "slot_index": 0,
+          "label": "Batch Size"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1254
+          ],
+          "slot_index": 0,
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Empty Latent Image"
+      },
+      "widgets_values": [
+        512,
+        512,
+        24
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "shape": 4
+    },
+    {
+      "id": 677,
+      "type": "LoadImage",
+      "pos": [
+        -60,
+        510
+      ],
+      "size": [
+        315,
+        313.99999237060547
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1236
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "4fba8cdfa20715dad6c7a45347119751.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 679,
+      "type": "PreviewImage",
+      "pos": [
+        330,
+        760
+      ],
+      "size": [
+        210,
+        246
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1238
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 676,
+      "type": "ControlNetLoader",
+      "pos": [
+        300,
+        660
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            1257
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "SD1.5 Canny.safetensors"
+      ]
+    },
+    {
+      "id": 678,
+      "type": "CannyEdgePreprocessor",
+      "pos": [
+        290,
+        510
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1236
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1238,
+            1258
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CannyEdgePreprocessor"
+      },
+      "widgets_values": [
+        100,
+        200,
+        512
+      ]
+    },
+    {
+      "id": 312,
+      "type": "CLIPTextEncode",
+      "pos": [
+        329,
+        -50
+      ],
+      "size": {
+        "0": 300,
+        "1": 60
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1229,
+          "label": "Clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1173,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1,
+          "label": "Positive Prompt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1260
+          ],
+          "slot_index": 0,
+          "label": "+"
+        }
+      ],
+      "title": "Clip Encode",
+      "properties": {
+        "Node name for S&R": "CLIP Text Encode (Prompt)"
+      },
+      "widgets_values": [
+        "an epic cinematic photo of a lone pirate ship sailing a stormy ocean, rough waves, midnight, thunderstorm and lightning, chiaroscuro,contrasting, detailed, 8k, Sony HDC-F5500"
+      ],
+      "color": "#232",
+      "bgcolor": "#353",
+      "shape": 4
+    },
+    {
+      "id": 313,
+      "type": "CLIPTextEncode",
+      "pos": [
+        330,
+        50
+      ],
+      "size": {
+        "0": 300,
+        "1": 60
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1230,
+          "label": "Clip"
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 1137,
+          "widget": {
+            "name": "text"
+          },
+          "slot_index": 1,
+          "label": "Negative Prompt"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            1261
+          ],
+          "slot_index": 0,
+          "label": "-"
+        }
+      ],
+      "title": "Clip Encode",
+      "properties": {
+        "Node name for S&R": "CLIP Text Encode (Prompt)"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "color": "#322",
+      "bgcolor": "#533",
+      "shape": 4
+    },
+    {
+      "id": 331,
+      "type": "KSampler",
+      "pos": [
+        811,
+        -25
+      ],
+      "size": {
+        "0": 320,
+        "1": 230
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1213,
+          "label": "Model"
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1263,
+          "label": "+"
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1264,
+          "label": "-"
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 1254,
+          "label": "Latent"
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "link": 1101,
+          "widget": {
+            "name": "sampler_name"
+          },
+          "label": "Sampler Name"
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "link": 1107,
+          "widget": {
+            "name": "scheduler"
+          },
+          "label": "Scheduler Name"
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 1133,
+          "widget": {
+            "name": "seed"
+          },
+          "slot_index": 6,
+          "label": "Seed"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1242,
+            1246
+          ],
+          "slot_index": 0,
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        663916217214975,
+        "randomize",
+        30,
+        7.5,
+        "dpmpp_3m_sde_gpu",
+        "exponential",
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 4
+    },
+    {
+      "id": 552,
+      "type": "PreviewImage",
+      "pos": [
+        778,
+        318
+      ],
+      "size": {
+        "0": 320,
+        "1": 246
+      },
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1127,
+          "slot_index": 0,
+          "label": "Image"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "color": "#222",
+      "bgcolor": "#000",
+      "shape": 4
+    },
+    {
+      "id": 666,
+      "type": "ADE_AnimateDiffCombine",
+      "pos": [
+        1156,
+        300
+      ],
+      "size": [
+        315,
+        507
+      ],
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1214
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GIF",
+          "type": "GIF",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffCombine"
+      },
+      "widgets_values": [
+        8,
+        0,
+        "AnimateDiff",
+        "image/gif",
+        false,
+        true,
+        "/view?filename=AnimateDiff_00011_.gif&subfolder=&type=output&format=image%2Fgif"
+      ]
+    },
+    {
+      "id": 683,
+      "type": "VAEDecode",
+      "pos": [
+        1510,
+        30
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1252
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 1256
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1253
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 684,
+      "type": "ADE_AnimateDiffCombine",
+      "pos": [
+        1768,
+        28
+      ],
+      "size": [
+        315,
+        507
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 1253
+        }
+      ],
+      "outputs": [
+        {
+          "name": "GIF",
+          "type": "GIF",
+          "links": null,
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffCombine"
+      },
+      "widgets_values": [
+        8,
+        0,
+        "AnimateDiff",
+        "image/webp",
+        false,
+        true,
+        "/view?filename=AnimateDiff_00010_.gif&subfolder=&type=output&format=image%2Fgif"
+      ]
+    },
+    {
+      "id": 650,
+      "type": "PrimitiveNode",
+      "pos": [
+        330,
+        -170
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 82
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            1184
+          ],
+          "widget": {
+            "name": "batch_size"
+          },
+          "label": "Batch Size"
+        }
+      ],
+      "title": "Batch Size                          ",
+      "properties": {},
+      "widgets_values": [
+        24,
+        "fixed"
+      ],
+      "color": "#223",
+      "bgcolor": "#335",
+      "shape": 4
+    },
+    {
+      "id": 685,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        720,
+        650
+      ],
+      "size": {
+        "0": 315,
+        "1": 166
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 1260
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 1261
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 1257
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 1258
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            1263,
+            1265
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            1264,
+            1266
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        0.5,
+        0.15,
+        0.75
+      ]
+    },
+    {
+      "id": 612,
+      "type": "PrimitiveNode",
+      "pos": [
+        320,
+        150
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 82
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "COMBO",
+          "type": "COMBO",
+          "links": [
+            1101,
+            1249
+          ],
+          "widget": {
+            "name": "sampler_name"
+          },
+          "slot_index": 0,
+          "label": "Sampler Name"
+        }
+      ],
+      "title": "Sampler                             ",
+      "properties": {},
+      "widgets_values": [
+        "dpmpp_3m_sde_gpu",
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 4
+    },
+    {
+      "id": 613,
+      "type": "PrimitiveNode",
+      "pos": [
+        320,
+        270
+      ],
+      "size": {
+        "0": 302.3999938964844,
+        "1": 82
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "COMBO",
+          "type": "COMBO",
+          "links": [
+            1107,
+            1250
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "scheduler"
+          },
+          "label": "Scheduler Name"
+        }
+      ],
+      "title": "Scheduler                           ",
+      "properties": {},
+      "widgets_values": [
+        "exponential",
+        "fixed"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159",
+      "shape": 4
+    },
+    {
+      "id": 682,
+      "type": "LatentUpscaleBy",
+      "pos": [
+        1160,
+        -90
+      ],
+      "size": [
+        320,
+        80
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 1242
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            1243
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentUpscaleBy"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        2
+      ]
+    },
+    {
+      "id": 673,
+      "type": "ADE_AnimateDiffUniformContextOptions",
+      "pos": [
+        0,
+        -160
+      ],
+      "size": {
+        "0": 315,
+        "1": 154
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTEXT_OPTIONS",
+          "type": "CONTEXT_OPTIONS",
+          "links": [
+            1231
+          ],
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffUniformContextOptions"
+      },
+      "widgets_values": [
+        24,
+        1,
+        3,
+        "uniform",
+        true
+      ]
+    },
+    {
+      "id": 665,
+      "type": "ADE_AnimateDiffLoaderWithContext",
+      "pos": [
+        340,
+        -330
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1217
+        },
+        {
+          "name": "context_options",
+          "type": "CONTEXT_OPTIONS",
+          "link": 1231,
+          "slot_index": 1
+        },
+        {
+          "name": "motion_lora",
+          "type": "MOTION_LORA",
+          "link": null,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1213,
+            1255
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ADE_AnimateDiffLoaderWithContext"
+      },
+      "widgets_values": [
+        "mm-Stabilized_high.pth",
+        "squaredcos_cap_v2"
+      ]
+    },
+    {
+      "id": 667,
+      "type": "CheckpointLoaderSimpleWithNoiseSelect",
+      "pos": [
+        0,
+        -320
+      ],
+      "size": {
+        "0": 315,
+        "1": 122
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1217
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1229,
+            1230
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            1219,
+            1256
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimpleWithNoiseSelect"
+      },
+      "widgets_values": [
+        "Paragon v1.0.ckpt",
+        "squaredcos_cap_v2"
+      ]
+    }
+  ],
+  "links": [
+    [
+      1101,
+      612,
+      0,
+      331,
+      4,
+      "COMBO"
+    ],
+    [
+      1107,
+      613,
+      0,
+      331,
+      5,
+      "COMBO"
+    ],
+    [
+      1126,
+      551,
+      0,
+      618,
+      0,
+      "*"
+    ],
+    [
+      1127,
+      618,
+      0,
+      552,
+      0,
+      "IMAGE"
+    ],
+    [
+      1133,
+      614,
+      0,
+      331,
+      6,
+      "INT"
+    ],
+    [
+      1137,
+      624,
+      0,
+      313,
+      1,
+      "STRING"
+    ],
+    [
+      1173,
+      623,
+      0,
+      312,
+      1,
+      "STRING"
+    ],
+    [
+      1184,
+      650,
+      0,
+      310,
+      0,
+      "INT"
+    ],
+    [
+      1213,
+      665,
+      0,
+      331,
+      0,
+      "MODEL"
+    ],
+    [
+      1214,
+      551,
+      0,
+      666,
+      0,
+      "IMAGE"
+    ],
+    [
+      1217,
+      667,
+      0,
+      665,
+      0,
+      "MODEL"
+    ],
+    [
+      1219,
+      667,
+      2,
+      551,
+      1,
+      "VAE"
+    ],
+    [
+      1229,
+      667,
+      1,
+      312,
+      0,
+      "CLIP"
+    ],
+    [
+      1230,
+      667,
+      1,
+      313,
+      0,
+      "CLIP"
+    ],
+    [
+      1231,
+      673,
+      0,
+      665,
+      1,
+      "CONTEXT_OPTIONS"
+    ],
+    [
+      1236,
+      677,
+      0,
+      678,
+      0,
+      "IMAGE"
+    ],
+    [
+      1238,
+      678,
+      0,
+      679,
+      0,
+      "IMAGE"
+    ],
+    [
+      1242,
+      331,
+      0,
+      682,
+      0,
+      "LATENT"
+    ],
+    [
+      1243,
+      682,
+      0,
+      680,
+      3,
+      "LATENT"
+    ],
+    [
+      1246,
+      331,
+      0,
+      551,
+      0,
+      "LATENT"
+    ],
+    [
+      1249,
+      612,
+      0,
+      680,
+      4,
+      "COMBO"
+    ],
+    [
+      1250,
+      613,
+      0,
+      680,
+      5,
+      "COMBO"
+    ],
+    [
+      1251,
+      614,
+      0,
+      680,
+      6,
+      "INT"
+    ],
+    [
+      1252,
+      680,
+      0,
+      683,
+      0,
+      "LATENT"
+    ],
+    [
+      1253,
+      683,
+      0,
+      684,
+      0,
+      "IMAGE"
+    ],
+    [
+      1254,
+      310,
+      0,
+      331,
+      3,
+      "LATENT"
+    ],
+    [
+      1255,
+      665,
+      0,
+      680,
+      0,
+      "MODEL"
+    ],
+    [
+      1256,
+      667,
+      2,
+      683,
+      1,
+      "VAE"
+    ],
+    [
+      1257,
+      676,
+      0,
+      685,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      1258,
+      678,
+      0,
+      685,
+      3,
+      "IMAGE"
+    ],
+    [
+      1260,
+      312,
+      0,
+      685,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      1261,
+      313,
+      0,
+      685,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1263,
+      685,
+      0,
+      331,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1264,
+      685,
+      1,
+      331,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      1265,
+      685,
+      0,
+      680,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      1266,
+      685,
+      1,
+      680,
+      2,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
