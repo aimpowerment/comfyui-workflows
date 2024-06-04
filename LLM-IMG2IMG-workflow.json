@@ -1,0 +1,1145 @@
+{
+  "last_node_id": 75,
+  "last_link_id": 102,
+  "nodes": [
+    {
+      "id": 68,
+      "type": "Reroute",
+      "pos": [
+        1076,
+        295.20735473632817
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 80
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 28,
+      "type": "VAEDecode",
+      "pos": [
+        1300,
+        990
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 21
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 24,
+      "type": "KSampler",
+      "pos": [
+        1160,
+        680
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 93
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 18
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        64068285258404,
+        "randomize",
+        40,
+        7.49,
+        "dpmpp_2m_sde",
+        "karras",
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 25,
+      "type": "EmptyLatentImage",
+      "pos": [
+        970,
+        860
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        920,
+        1280,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 70,
+      "type": "ShowText|pysssss",
+      "pos": [
+        740,
+        910
+      ],
+      "size": {
+        "0": 310,
+        "1": 76
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 89,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "what is this? create a sdxl prompt "
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 27,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1070,
+        760
+      ],
+      "size": {
+        "0": 430,
+        "1": 180
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 79
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 98,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            19
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "C-",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 26,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1060,
+        720
+      ],
+      "size": {
+        "0": 420,
+        "1": 160
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 78
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 99,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "C+ ",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 40,
+      "type": "LoraLoader",
+      "pos": [
+        870,
+        820
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 41
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "LCM_loRa_SDXL.safetensors",
+        1,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 71,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1101,
+        1045
+      ],
+      "size": {
+        "0": 380,
+        "1": 240
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 90,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "Best quality, masterpiece, Epic, cover-art,  This image depicts a group of four women in what appears to be an old photograph. They are dressed in Victorian-era clothing, which suggests the photo is from around the late 19th or early 20th century. The women are standing close together, with one woman positioned slightly behind the others, creating a sense of depth in the composition.\n\nSDXL Prompt: \"Analyze the visual and cultural elements in this vintage photograph, focusing on the subjects' attire, hairstyles, and expressions, as well as any symbols or text that might provide context about the time period it represents.\"  Cinematic still, shallow depth of field, vignette, dramatic-lighting, highly detailed, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy,  rich-colors,"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 72,
+      "type": "ShowText|pysssss",
+      "pos": [
+        740,
+        1200
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 91,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss",
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "widgets_values": [
+        "",
+        "bad-hands-5, FastNegativeEmbedding, low quality:1.4, jpeg artifacts:1.5, letterbox, beginner, amateur, signature, watermark, username, logo, greyscale, monochrome, bad anatomy, missing arms, missing legs, extra arms, extra legs, bad legs, bad feet, extra fingers, fewer fingers, bad hand, poorly drawn face, mutation, deformed, ((head wear)), ((cropped head)), ((head out of frame)), child:1.1, female:1.9, woman:1.9, girl:1.9"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 17,
+      "type": "VAELoader",
+      "pos": [
+        349,
+        967
+      ],
+      "size": {
+        "0": 360,
+        "1": 60
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 16,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        390,
+        737
+      ],
+      "size": {
+        "0": 330,
+        "1": 100
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            41,
+            93
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            74,
+            78,
+            79
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "absoluterealisticpic_v10.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 55,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1312,
+        -49
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 61,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "what is this? create a sdxl prompt "
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 52,
+      "type": "IF_SaveText",
+      "pos": [
+        607,
+        23
+      ],
+      "size": {
+        "0": 315,
+        "1": 238
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "question_input",
+          "type": "STRING",
+          "link": 100,
+          "widget": {
+            "name": "question_input"
+          }
+        },
+        {
+          "name": "response_input",
+          "type": "STRING",
+          "link": 101,
+          "widget": {
+            "name": "response_input"
+          }
+        },
+        {
+          "name": "negative_input",
+          "type": "STRING",
+          "link": 102,
+          "widget": {
+            "name": "negative_input"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Question",
+          "type": "STRING",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Response",
+          "type": "STRING",
+          "links": [
+            62,
+            99
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "Negative",
+          "type": "STRING",
+          "links": [
+            63,
+            80,
+            98
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "Turn",
+          "type": "STRING",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IF_SaveText"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        true,
+        "txt",
+        "create"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 56,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1194,
+        125
+      ],
+      "size": {
+        "0": 320,
+        "1": 250
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 62,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Best quality, masterpiece, Epic, cover-art,  This image depicts a group of four women in what appears to be an old photograph. They are dressed in Victorian-era clothing, which suggests the photo is from around the late 19th or early 20th century. The women are standing close together, with one woman positioned slightly behind the others, creating a sense of depth in the composition.\n\nSDXL Prompt: \"Analyze the visual and cultural elements in this vintage photograph, focusing on the subjects' attire, hairstyles, and expressions, as well as any symbols or text that might provide context about the time period it represents.\"  Cinematic still, shallow depth of field, vignette, dramatic-lighting, highly detailed, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy,  rich-colors,"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 29,
+      "type": "SaveImage",
+      "pos": [
+        1689,
+        241
+      ],
+      "size": {
+        "0": 550,
+        "1": 740
+      },
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "_IF_prompt_Mkr_"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 57,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1218,
+        424
+      ],
+      "size": {
+        "0": 320,
+        "1": 110
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 63,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "bad-hands-5, FastNegativeEmbedding, low quality:1.4, jpeg artifacts:1.5, letterbox, beginner, amateur, signature, watermark, username, logo, greyscale, monochrome, bad anatomy, missing arms, missing legs, extra arms, extra legs, bad legs, bad feet, extra fingers, fewer fingers, bad hand, poorly drawn face, mutation, deformed, ((head wear)), ((cropped head)), ((head out of frame)), child:1.1, female:1.9, woman:1.9, girl:1.9"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 54,
+      "type": "ShowText|pysssss",
+      "pos": [
+        1685,
+        -138
+      ],
+      "size": {
+        "0": 330,
+        "1": 310
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 60,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "ID: 81f13974-f735-44fa-b050-f14179cb7f89\nQuestion: what is this? create a sdxl prompt \nResponse: Best quality, masterpiece, Epic, cover-art,  This image depicts a group of four women in what appears to be an old photograph. They are dressed in Victorian-era clothing, which suggests the photo is from around the late 19th or early 20th century. The women are standing close together, with one woman positioned slightly behind the others, creating a sense of depth in the composition.\n\nSDXL Prompt: \"Analyze the visual and cultural elements in this vintage photograph, focusing on the subjects' attire, hairstyles, and expressions, as well as any symbols or text that might provide context about the time period it represents.\"  Cinematic still, shallow depth of field, vignette, dramatic-lighting, highly detailed, bokeh, cinemascope, moody, epic, gorgeous, film grain, grainy,  rich-colors,\nNegative: bad-hands-5, FastNegativeEmbedding, low quality:1.4, jpeg artifacts:1.5, letterbox, beginner, amateur, signature, watermark, username, logo, greyscale, monochrome, bad anatomy, missing arms, missing legs, extra arms, extra legs, bad legs, bad feet, extra fingers, fewer fingers, bad hand, poorly drawn face, mutation, deformed, ((head wear)), ((cropped head)), ((head out of frame)), child:1.1, female:1.9, woman:1.9, girl:1.9"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 65,
+      "type": "IF_ImagePrompt",
+      "pos": [
+        -42,
+        185
+      ],
+      "size": {
+        "0": 420,
+        "1": 700
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Question",
+          "type": "STRING",
+          "links": [
+            89,
+            100
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Response",
+          "type": "STRING",
+          "links": [
+            90,
+            101
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "Negative",
+          "type": "STRING",
+          "links": [
+            91,
+            102
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IF_ImagePrompt"
+      },
+      "widgets_values": [
+        "what is this? create a sdxl prompt ",
+        "0_HyANOWOe7ElQE2mp (1).png",
+        "llava:latest",
+        "Epic",
+        "CInematic",
+        "BadMacho",
+        0.7,
+        1462788459,
+        "randomize",
+        88,
+        0,
+        2042,
+        "image"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    }
+  ],
+  "links": [
+    [
+      18,
+      26,
+      0,
+      24,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      19,
+      27,
+      0,
+      24,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      25,
+      0,
+      24,
+      3,
+      "LATENT"
+    ],
+    [
+      21,
+      24,
+      0,
+      28,
+      0,
+      "LATENT"
+    ],
+    [
+      22,
+      28,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      17,
+      0,
+      28,
+      1,
+      "VAE"
+    ],
+    [
+      41,
+      16,
+      0,
+      40,
+      0,
+      "MODEL"
+    ],
+    [
+      60,
+      52,
+      3,
+      54,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      52,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      62,
+      52,
+      1,
+      56,
+      0,
+      "STRING"
+    ],
+    [
+      63,
+      52,
+      2,
+      57,
+      0,
+      "STRING"
+    ],
+    [
+      74,
+      16,
+      1,
+      40,
+      1,
+      "CLIP"
+    ],
+    [
+      78,
+      16,
+      1,
+      26,
+      0,
+      "CLIP"
+    ],
+    [
+      79,
+      16,
+      1,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      80,
+      52,
+      2,
+      68,
+      0,
+      "*"
+    ],
+    [
+      89,
+      65,
+      0,
+      70,
+      0,
+      "STRING"
+    ],
+    [
+      90,
+      65,
+      1,
+      71,
+      0,
+      "STRING"
+    ],
+    [
+      91,
+      65,
+      2,
+      72,
+      0,
+      "STRING"
+    ],
+    [
+      93,
+      16,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      98,
+      52,
+      2,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      99,
+      52,
+      1,
+      26,
+      1,
+      "STRING"
+    ],
+    [
+      100,
+      65,
+      0,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      101,
+      65,
+      1,
+      52,
+      1,
+      "STRING"
+    ],
+    [
+      102,
+      65,
+      2,
+      52,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-03-12T11:34:02.047Z",
+      "modified": "2024-03-12T12:48:22.004Z",
+      "software": "ComfyUI"
+    }
+  },
+  "version": 0.4
+}

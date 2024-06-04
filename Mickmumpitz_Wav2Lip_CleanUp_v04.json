@@ -1,0 +1,1385 @@
+{
+  "last_node_id": 214,
+  "last_link_id": 424,
+  "nodes": [
+    {
+      "id": 154,
+      "type": "Note",
+      "pos": [
+        2810,
+        360
+      ],
+      "size": {
+        "0": 308.5058288574219,
+        "1": 77.57723236083984
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "This one is optional. Brings everything together, but can lead to flickering again if used too much! "
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 155,
+      "type": "Reroute",
+      "pos": [
+        231,
+        -315
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 319
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "VHS_AUDIO",
+          "links": [
+            320
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    },
+    {
+      "id": 124,
+      "type": "FaceRestoreModelLoader",
+      "pos": [
+        2800,
+        100
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FACERESTORE_MODEL",
+          "type": "FACERESTORE_MODEL",
+          "links": [
+            268
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreModelLoader"
+      },
+      "widgets_values": [
+        "GFPGANv1.4.pth"
+      ]
+    },
+    {
+      "id": 145,
+      "type": "ImageScale",
+      "pos": [
+        230,
+        220
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 299
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 300,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 301,
+          "widget": {
+            "name": "width"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            303
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    },
+    {
+      "id": 142,
+      "type": "Integer",
+      "pos": [
+        230,
+        110
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            293,
+            300
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Height",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        1080
+      ]
+    },
+    {
+      "id": 144,
+      "type": "Integer",
+      "pos": [
+        230,
+        0
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            294,
+            301
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Width",
+      "properties": {
+        "Node name for S&R": "Integer"
+      },
+      "widgets_values": [
+        1920
+      ]
+    },
+    {
+      "id": 143,
+      "type": "ImageScale",
+      "pos": [
+        222,
+        -185
+      ],
+      "size": {
+        "0": 315,
+        "1": 130
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 295
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 293,
+          "widget": {
+            "name": "height"
+          }
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 294,
+          "widget": {
+            "name": "width"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            407
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageScale"
+      },
+      "widgets_values": [
+        "nearest-exact",
+        512,
+        512,
+        "disabled"
+      ]
+    },
+    {
+      "id": 125,
+      "type": "FaceRestoreCFWithModel",
+      "pos": [
+        2800,
+        220
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "facerestore_model",
+          "type": "FACERESTORE_MODEL",
+          "link": 268
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 311
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            410
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreCFWithModel"
+      },
+      "widgets_values": [
+        "YOLOv5l",
+        0.9
+      ]
+    },
+    {
+      "id": 202,
+      "type": "ImpactImageBatchToImageList",
+      "pos": [
+        1288,
+        260
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 405
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            406
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactImageBatchToImageList"
+      }
+    },
+    {
+      "id": 196,
+      "type": "MediaPipeFaceMeshToSEGS",
+      "pos": [
+        1360,
+        970
+      ],
+      "size": {
+        "0": 315,
+        "1": 346
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 401
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SEGS",
+          "type": "SEGS",
+          "links": [
+            402
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaPipeFaceMeshToSEGS"
+      },
+      "widgets_values": [
+        3,
+        false,
+        50,
+        1,
+        0,
+        false,
+        true,
+        false,
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": 126,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -100,
+        -250
+      ],
+      "size": [
+        235.1999969482422,
+        373.381816517223
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            295
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "Base Video (Upload) 🎥🅥🅗🅢",
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "Gen-2 Output.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "Gen-2 Output.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 131,
+      "type": "VHS_LoadVideo",
+      "pos": [
+        -101,
+        221
+      ],
+      "size": [
+        260.3999938964844,
+        387.2183300018311
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            299
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "links": [
+            319
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "title": "Wav2Lip Video (Upload) 🎥🅥🅗🅢",
+      "properties": {
+        "Node name for S&R": "VHS_LoadVideo"
+      },
+      "widgets_values": {
+        "video": "Wav2Lip Output.mp4",
+        "force_rate": 0,
+        "force_size": "Disabled",
+        "custom_width": 512,
+        "custom_height": 512,
+        "frame_load_cap": 0,
+        "skip_first_frames": 0,
+        "select_every_nth": 1,
+        "choose video to upload": "image",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "frame_load_cap": 0,
+            "skip_first_frames": 0,
+            "force_rate": 0,
+            "filename": "Wav2Lip Output.mp4",
+            "type": "input",
+            "format": "video/mp4",
+            "select_every_nth": 1
+          }
+        }
+      }
+    },
+    {
+      "id": 130,
+      "type": "ImageCompositeMasked",
+      "pos": [
+        2310,
+        240
+      ],
+      "size": {
+        "0": 315,
+        "1": 146
+      },
+      "flags": {},
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "destination",
+          "type": "IMAGE",
+          "link": 408
+        },
+        {
+          "name": "source",
+          "type": "IMAGE",
+          "link": 406
+        },
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 415,
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            311
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageCompositeMasked"
+      },
+      "widgets_values": [
+        0,
+        0,
+        true
+      ]
+    },
+    {
+      "id": 141,
+      "type": "FaceRestoreCFWithModel",
+      "pos": [
+        770,
+        260
+      ],
+      "size": {
+        "0": 315,
+        "1": 102
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "facerestore_model",
+          "type": "FACERESTORE_MODEL",
+          "link": 290
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 303
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            305,
+            399,
+            405
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreCFWithModel"
+      },
+      "widgets_values": [
+        "YOLOv5l",
+        0.7000000000000001
+      ]
+    },
+    {
+      "id": 140,
+      "type": "FaceRestoreModelLoader",
+      "pos": [
+        770,
+        150
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "FACERESTORE_MODEL",
+          "type": "FACERESTORE_MODEL",
+          "links": [
+            290
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FaceRestoreModelLoader"
+      },
+      "widgets_values": [
+        "GFPGANv1.4.pth"
+      ]
+    },
+    {
+      "id": 127,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        3496,
+        -152
+      ],
+      "size": [
+        677.0685424804688,
+        654.0386007880875
+      ],
+      "flags": {},
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 411
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": 320
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "LipSync_audio_GFPGAN",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "LipSync_audio_GFPGAN_00001-audio.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 203,
+      "type": "ImpactImageBatchToImageList",
+      "pos": [
+        861,
+        -185
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 407
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            408
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactImageBatchToImageList"
+      }
+    },
+    {
+      "id": 146,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        781,
+        543
+      ],
+      "size": [
+        315,
+        450
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 305
+        },
+        {
+          "name": "audio",
+          "type": "VHS_AUDIO",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Filenames",
+          "type": "VHS_FILENAMES",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 24,
+        "loop_count": 0,
+        "filename_prefix": "LipSync_Wav2Lip+GFPGAN",
+        "format": "video/h264-mp4",
+        "pix_fmt": "yuv420p",
+        "crf": 20,
+        "save_metadata": true,
+        "pingpong": false,
+        "save_output": true,
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "LipSync_Wav2Lip+GFPGAN_00001.mp4",
+            "subfolder": "",
+            "type": "output",
+            "format": "video/h264-mp4"
+          }
+        }
+      }
+    },
+    {
+      "id": 205,
+      "type": "ImageListToImageBatch",
+      "pos": [
+        3204,
+        220
+      ],
+      "size": {
+        "0": 210,
+        "1": 26
+      },
+      "flags": {},
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 410
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            411
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageListToImageBatch"
+      }
+    },
+    {
+      "id": 157,
+      "type": "MediaPipe-FaceMeshPreprocessor",
+      "pos": [
+        1370,
+        820
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 400
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            401,
+            418
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaPipe-FaceMeshPreprocessor"
+      },
+      "widgets_values": [
+        2,
+        0.5,
+        512
+      ]
+    },
+    {
+      "id": 200,
+      "type": "ImpactSEGSToMaskList",
+      "pos": [
+        1700,
+        890
+      ],
+      "size": [
+        322.811069077773,
+        36.709036417131074
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "segs",
+          "type": "SEGS",
+          "link": 402
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": [
+            413
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactSEGSToMaskList"
+      }
+    },
+    {
+      "id": 206,
+      "type": "GrowMaskWithBlur",
+      "pos": [
+        1710,
+        970
+      ],
+      "size": {
+        "0": 315,
+        "1": 222
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 413
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "links": [
+            414,
+            415
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "mask_inverted",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "GrowMaskWithBlur"
+      },
+      "widgets_values": [
+        60,
+        0,
+        true,
+        false,
+        35,
+        1,
+        1
+      ]
+    },
+    {
+      "id": 201,
+      "type": "MaskToImage",
+      "pos": [
+        1720,
+        1250
+      ],
+      "size": {
+        "0": 300.6851806640625,
+        "1": 26
+      },
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "mask",
+          "type": "MASK",
+          "link": 414
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            404
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MaskToImage"
+      }
+    },
+    {
+      "id": 210,
+      "type": "PreviewImage",
+      "pos": [
+        1710,
+        730
+      ],
+      "size": [
+        308.25607198202306,
+        116.73807184898146
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 418
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 162,
+      "type": "PreviewImage",
+      "pos": [
+        2088,
+        1063
+      ],
+      "size": {
+        "0": 270.9264221191406,
+        "1": 246
+      },
+      "flags": {},
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 404
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 167,
+      "type": "ImpactImageBatchToImageList",
+      "pos": [
+        1370,
+        750
+      ],
+      "size": [
+        307.0949443441925,
+        26
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 399
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            400
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImpactImageBatchToImageList"
+      }
+    }
+  ],
+  "links": [
+    [
+      268,
+      124,
+      0,
+      125,
+      0,
+      "FACERESTORE_MODEL"
+    ],
+    [
+      290,
+      140,
+      0,
+      141,
+      0,
+      "FACERESTORE_MODEL"
+    ],
+    [
+      293,
+      142,
+      0,
+      143,
+      1,
+      "INT"
+    ],
+    [
+      294,
+      144,
+      0,
+      143,
+      2,
+      "INT"
+    ],
+    [
+      295,
+      126,
+      0,
+      143,
+      0,
+      "IMAGE"
+    ],
+    [
+      299,
+      131,
+      0,
+      145,
+      0,
+      "IMAGE"
+    ],
+    [
+      300,
+      142,
+      0,
+      145,
+      1,
+      "INT"
+    ],
+    [
+      301,
+      144,
+      0,
+      145,
+      2,
+      "INT"
+    ],
+    [
+      303,
+      145,
+      0,
+      141,
+      1,
+      "IMAGE"
+    ],
+    [
+      305,
+      141,
+      0,
+      146,
+      0,
+      "IMAGE"
+    ],
+    [
+      311,
+      130,
+      0,
+      125,
+      1,
+      "IMAGE"
+    ],
+    [
+      319,
+      131,
+      2,
+      155,
+      0,
+      "*"
+    ],
+    [
+      320,
+      155,
+      0,
+      127,
+      1,
+      "VHS_AUDIO"
+    ],
+    [
+      399,
+      141,
+      0,
+      167,
+      0,
+      "IMAGE"
+    ],
+    [
+      400,
+      167,
+      0,
+      157,
+      0,
+      "IMAGE"
+    ],
+    [
+      401,
+      157,
+      0,
+      196,
+      0,
+      "IMAGE"
+    ],
+    [
+      402,
+      196,
+      0,
+      200,
+      0,
+      "SEGS"
+    ],
+    [
+      404,
+      201,
+      0,
+      162,
+      0,
+      "IMAGE"
+    ],
+    [
+      405,
+      141,
+      0,
+      202,
+      0,
+      "IMAGE"
+    ],
+    [
+      406,
+      202,
+      0,
+      130,
+      1,
+      "IMAGE"
+    ],
+    [
+      407,
+      143,
+      0,
+      203,
+      0,
+      "IMAGE"
+    ],
+    [
+      408,
+      203,
+      0,
+      130,
+      0,
+      "IMAGE"
+    ],
+    [
+      410,
+      125,
+      0,
+      205,
+      0,
+      "IMAGE"
+    ],
+    [
+      411,
+      205,
+      0,
+      127,
+      0,
+      "IMAGE"
+    ],
+    [
+      413,
+      200,
+      0,
+      206,
+      0,
+      "MASK"
+    ],
+    [
+      414,
+      206,
+      0,
+      201,
+      0,
+      "MASK"
+    ],
+    [
+      415,
+      206,
+      0,
+      130,
+      2,
+      "MASK"
+    ],
+    [
+      418,
+      157,
+      0,
+      210,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "FACE RESTORE LIPS ",
+      "bounding": [
+        746,
+        66,
+        371,
+        323
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "FACE RESTORE ALL",
+      "bounding": [
+        2738,
+        2,
+        430,
+        475
+      ],
+      "color": "#3f789e",
+      "font_size": 24
+    },
+    {
+      "title": "MASK_SETUP",
+      "bounding": [
+        1323,
+        644,
+        1060,
+        712
+      ],
+      "color": "#b06634",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}
