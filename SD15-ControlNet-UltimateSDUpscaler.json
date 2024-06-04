@@ -1,0 +1,837 @@
+{
+  "last_node_id": 47,
+  "last_link_id": 79,
+  "nodes": [
+    {
+      "id": 46,
+      "type": "UltimateSDUpscale",
+      "pos": [
+        1984.6015233203132,
+        307
+      ],
+      "size": {
+        "0": 315,
+        "1": 590
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 72
+        },
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 73,
+          "slot_index": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 74,
+          "slot_index": 2
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 75,
+          "slot_index": 3
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 76,
+          "slot_index": 4
+        },
+        {
+          "name": "upscale_model",
+          "type": "UPSCALE_MODEL",
+          "link": 78
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            79
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UltimateSDUpscale"
+      },
+      "widgets_values": [
+        2,
+        213340062738817,
+        "randomize",
+        30,
+        8,
+        "euler",
+        "normal",
+        0.4,
+        "Chess",
+        512,
+        512,
+        14,
+        32,
+        "Half Tile",
+        1,
+        64,
+        14,
+        16,
+        "enable"
+      ],
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 34,
+      "type": "VAEDecode",
+      "pos": [
+        1994,
+        212
+      ],
+      "size": {
+        "0": 299.7056579589844,
+        "1": 46
+      },
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 62
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 63
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            72
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 29,
+      "type": "ControlNetLoader",
+      "pos": [
+        953,
+        131
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "CONTROL_NET",
+          "type": "CONTROL_NET",
+          "links": [
+            56
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetLoader"
+      },
+      "widgets_values": [
+        "control_v1p_sd15_qrcode_monster.safetensors"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        944,
+        795
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            58,
+            73
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            63,
+            76
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "artisticmix_v10.safetensors"
+      ]
+    },
+    {
+      "id": 39,
+      "type": "UpscaleModelLoader",
+      "pos": [
+        946,
+        939
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "UPSCALE_MODEL",
+          "type": "UPSCALE_MODEL",
+          "links": [
+            78
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "UpscaleModelLoader"
+      },
+      "widgets_values": [
+        "ESRGAN_4x.pth"
+      ]
+    },
+    {
+      "id": 35,
+      "type": "SaveImage",
+      "pos": [
+        2314,
+        217
+      ],
+      "size": {
+        "0": 785.9606323242188,
+        "1": 667.2964477539062
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 79
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ControlNet-ComfyUI"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1284,
+        800
+      ],
+      "size": {
+        "0": 627.375732421875,
+        "1": 139.55368041992188
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            55,
+            75
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Negative Prompt",
+      "properties": {
+        "Node name for S&R": "Negative Prompt"
+      },
+      "widgets_values": [
+        "over saturated, Watermark, Text, low quality, blurry, out of focus,soft"
+      ],
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        1279,
+        585
+      ],
+      "size": {
+        "0": 636.6337890625,
+        "1": 179.99998474121094
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            54,
+            74
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Positive Prompt",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "Medieval village scene with busy streets and castle in the distance, french countryside, town square"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1284,
+        431
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            59
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Image & Batch Settings"
+      },
+      "widgets_values": [
+        512,
+        512,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "PrimitiveNode",
+      "pos": [
+        1286,
+        303
+      ],
+      "size": {
+        "0": 210,
+        "1": 82
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            66
+          ],
+          "slot_index": 0,
+          "widget": {
+            "name": "seed",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": 0,
+                "max": 18446744073709552000
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Random Seed",
+      "properties": {},
+      "widgets_values": [
+        888176194248579,
+        "randomize"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "KSamplerAdvanced",
+      "pos": [
+        1618,
+        136
+      ],
+      "size": {
+        "0": 315,
+        "1": 334
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 58
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 60
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 61
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 59
+        },
+        {
+          "name": "noise_seed",
+          "type": "INT",
+          "link": 66,
+          "widget": {
+            "name": "noise_seed",
+            "config": [
+              "INT",
+              {
+                "default": 0,
+                "min": 0,
+                "max": 18446744073709552000
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            62
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerAdvanced"
+      },
+      "widgets_values": [
+        "enable",
+        1059561808465009,
+        "randomize",
+        30,
+        8.5,
+        "euler",
+        "normal",
+        0,
+        10000,
+        "disable"
+      ]
+    },
+    {
+      "id": 47,
+      "type": "Note",
+      "pos": [
+        1287,
+        95
+      ],
+      "size": [
+        309,
+        168
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "title": "Start here",
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Select your ControlNet Image, specify Image dimensions, batch size, prompt (+ & -)\n\nControl the Strength of ControlNet via the Strength settings (0.6 - 0.9). With some images you may have to go 1.1 or above.\n\nINSTALL: Ultimate SD Upscale node (if not already done)\n\nControl the size of Upscale in the Ultimate SD Upscale node."
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 31,
+      "type": "LoadImage",
+      "pos": [
+        948,
+        233
+      ],
+      "size": [
+        315.49249267578125,
+        314
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            57
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "title": "ControlNetd Image",
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "petroglyph-153863_960_720 (1).png",
+        "image"
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    },
+    {
+      "id": 30,
+      "type": "ControlNetApplyAdvanced",
+      "pos": [
+        946,
+        582
+      ],
+      "size": {
+        "0": 315,
+        "1": 166
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 54
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 55
+        },
+        {
+          "name": "control_net",
+          "type": "CONTROL_NET",
+          "link": 56
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 57
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ControlNetApplyAdvanced"
+      },
+      "widgets_values": [
+        0.6999999999999997,
+        0,
+        1
+      ],
+      "color": "#223",
+      "bgcolor": "#335"
+    }
+  ],
+  "links": [
+    [
+      3,
+      4,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      5,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      54,
+      6,
+      0,
+      30,
+      0,
+      "CONDITIONING"
+    ],
+    [
+      55,
+      7,
+      0,
+      30,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      56,
+      29,
+      0,
+      30,
+      2,
+      "CONTROL_NET"
+    ],
+    [
+      57,
+      31,
+      0,
+      30,
+      3,
+      "IMAGE"
+    ],
+    [
+      58,
+      4,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      59,
+      5,
+      0,
+      33,
+      3,
+      "LATENT"
+    ],
+    [
+      60,
+      30,
+      0,
+      33,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      61,
+      30,
+      1,
+      33,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      62,
+      33,
+      0,
+      34,
+      0,
+      "LATENT"
+    ],
+    [
+      63,
+      4,
+      2,
+      34,
+      1,
+      "VAE"
+    ],
+    [
+      66,
+      14,
+      0,
+      33,
+      4,
+      "INT"
+    ],
+    [
+      72,
+      34,
+      0,
+      46,
+      0,
+      "IMAGE"
+    ],
+    [
+      73,
+      4,
+      0,
+      46,
+      1,
+      "MODEL"
+    ],
+    [
+      74,
+      6,
+      0,
+      46,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      75,
+      7,
+      0,
+      46,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      76,
+      4,
+      2,
+      46,
+      4,
+      "VAE"
+    ],
+    [
+      78,
+      39,
+      0,
+      46,
+      5,
+      "UPSCALE_MODEL"
+    ],
+    [
+      79,
+      46,
+      0,
+      35,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Setup and Config",
+      "bounding": [
+        898,
+        21,
+        1049,
+        999
+      ],
+      "color": "#3f789e"
+    },
+    {
+      "title": "Upscaled Result",
+      "bounding": [
+        1965,
+        25,
+        1152,
+        997
+      ],
+      "color": "#8A8"
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

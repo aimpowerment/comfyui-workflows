@@ -1,0 +1,8560 @@
+{
+  "last_node_id": 227,
+  "last_link_id": 377,
+  "nodes": [
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        870,
+        380
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 39
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 40
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 17
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 18
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        749175404416998,
+        "fixed",
+        20,
+        2.5,
+        "euler",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 66,
+      "type": "KSampler",
+      "pos": [
+        860,
+        1130
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 360
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 376
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 365
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 366
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            120
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        749175404416998,
+        "fixed",
+        20,
+        2.5,
+        "euler",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 72,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1457.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 127,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            129
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 74,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1707.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 133
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            131
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            130
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 75,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1707.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 130,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            132
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 78,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1947.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 134,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            136
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 79,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1947.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 135
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 136,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            142
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            186
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 77,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1947.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 140
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            135
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            134
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 80,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2327.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 142
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            138
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            137
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 81,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        2327.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 34,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 137,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            139
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 82,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2327.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 36,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 138
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 139,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            173
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            188
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 115,
+      "type": "ImageBatch",
+      "pos": [
+        2557.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 40,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 187
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 188
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            189
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 83,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2697.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 39,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 173
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            144
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            143
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 84,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        2697.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 42,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 143,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            145
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 118,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3077.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 50,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 203,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            205
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 119,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3077.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 52,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 204
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 205,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            206
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            218
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 120,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3437.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 55,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 206
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            208
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            207
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 121,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3437.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 58,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 207,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            209
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 122,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3437.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 60,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 208
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 209,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            210
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            220
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 123,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3817.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 63,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 210
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            212
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            211
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 124,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3817.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 66,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 211,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            213
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 125,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3817.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 68,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 212
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 213,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            214
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            222
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 126,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4187.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 71,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 214
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            216
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            215
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 127,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4187.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 74,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 215,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            217
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 130,
+      "type": "ImageBatch",
+      "pos": [
+        3657.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 64,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 219
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 220
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            221
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 131,
+      "type": "ImageBatch",
+      "pos": [
+        4047.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 72,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 221
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 222
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            223
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 85,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2697.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 44,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 144
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 145,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            225
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            190
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 117,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3077.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 47,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 225
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            204
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            203
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 116,
+      "type": "ImageBatch",
+      "pos": [
+        2917.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 48,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 189
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 190
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            226
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 129,
+      "type": "ImageBatch",
+      "pos": [
+        3297.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 56,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 226
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 218
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            219
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 134,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4537.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 82,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 227,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            229
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 135,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4537.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 84,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 228
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 229,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            231
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            230
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 137,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4917.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 87,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 231
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            233
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            232
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 138,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4917.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 90,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 232,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            234
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 139,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4917.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 92,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 233
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 234,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            235
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            248
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 140,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5277.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 95,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            237
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            236
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 141,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        5277.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 98,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 236,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            238
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 142,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5277.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 100,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 237
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 238,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            239
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            250
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 144,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        5657.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 106,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 240,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            242
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 145,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5657.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 108,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 241
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 242,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            243
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            252
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 147,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        6027.890701127828,
+        1656.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 114,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 244,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            246
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 148,
+      "type": "VHS_SplitImages",
+      "pos": [
+        6027.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 116,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 245
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 246,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            254
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 149,
+      "type": "ImageBatch",
+      "pos": [
+        5137.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 96,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 247
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 248
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            249
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 150,
+      "type": "ImageBatch",
+      "pos": [
+        5497.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 104,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 249
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 250
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            251
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 151,
+      "type": "ImageBatch",
+      "pos": [
+        5887.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 112,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 251
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 252
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            253
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 128,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4187.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 76,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 216
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 217,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            255
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            224
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 132,
+      "type": "ImageBatch",
+      "pos": [
+        4407.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 80,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 223
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 224
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            256
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 133,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4537.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 79,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 255
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            228
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            227
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 136,
+      "type": "ImageBatch",
+      "pos": [
+        4757.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 88,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 256
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 230
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            247
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 152,
+      "type": "ImageBatch",
+      "pos": [
+        6247.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 118,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 253
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 254
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            259
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 146,
+      "type": "VHS_SplitImages",
+      "pos": [
+        6027.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 111,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 243
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            245
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            244
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 143,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5657.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 103,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 239
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            241
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            240
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 73,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1457.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 128
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 129,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            133
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 114,
+      "type": "ImageBatch",
+      "pos": [
+        2167.890701127828,
+        1776.079731848149
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 268
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 186
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            187
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 76,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1707.890701127828,
+        1696.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 22,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 131
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 132,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            140
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            268
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 71,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1457.890701127828,
+        1616.079731848149
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 257
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            128
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            127
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 160,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1460.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 270,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            272
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 161,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1460.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 271
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 272,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            273
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 162,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1710.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 273
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            275
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            274
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 163,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1710.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 274,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            276
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 164,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1710.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 275
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 276,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            277
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            289
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 165,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1950.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 277
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            279
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            278
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 166,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        1950.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 278,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            280
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 167,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1950.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 279
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 280,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            281
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            290
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 168,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2330.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 281
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            283
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            282
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 169,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        2330.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 33,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 282,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            284
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 170,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2330.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 35,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 283
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 284,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            285
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            292
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 171,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2700.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 37,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 285
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            287
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            286
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 172,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        2700.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 41,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 286,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            288
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 173,
+      "type": "VHS_SplitImages",
+      "pos": [
+        2700.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 43,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 287
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 288,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            295
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            294
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 174,
+      "type": "ImageBatch",
+      "pos": [
+        2170.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 289
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 290
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            291
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 175,
+      "type": "ImageBatch",
+      "pos": [
+        2560.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 38,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 291
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 292
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            293
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 176,
+      "type": "ImageBatch",
+      "pos": [
+        2920.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 46,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 293
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 294
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            311
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 177,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3080.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 45,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 295
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            297
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            296
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 178,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3080.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 49,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 296,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            298
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 179,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3080.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 51,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 297
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 298,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            299
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            312
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 180,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3440.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 53,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 299
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            301
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            300
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 181,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3440.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 57,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 300,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            302
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 182,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3440.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 59,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 301
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 302,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            303
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            314
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 183,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3820.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 61,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 303
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            305
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            304
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 184,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        3820.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 65,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 304,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            306
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 185,
+      "type": "VHS_SplitImages",
+      "pos": [
+        3820.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 67,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 305
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 306,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            307
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            316
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 186,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4190.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 69,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 307
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            309
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            308
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 187,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4190.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 73,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 308,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            310
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 188,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4190.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 75,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 309
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 310,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            319
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            318
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 189,
+      "type": "ImageBatch",
+      "pos": [
+        3300.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 54,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 311
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 312
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            313
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 191,
+      "type": "ImageBatch",
+      "pos": [
+        4050.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 70,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 315
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 316
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            317
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 192,
+      "type": "ImageBatch",
+      "pos": [
+        4410.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 78,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 317
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 318
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            323
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 193,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4540.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 77,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 319
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            321
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            320
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 194,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4540.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 81,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 320,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            322
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 195,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4540.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 83,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 321
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 322,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            325
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            324
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 196,
+      "type": "ImageBatch",
+      "pos": [
+        4760.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 86,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 323
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 324
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            341
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 197,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4920.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 85,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 325
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            327
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            326
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 198,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        4920.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 89,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 326,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            328
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 199,
+      "type": "VHS_SplitImages",
+      "pos": [
+        4920.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 91,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 327
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 328,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            329
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            342
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 200,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5280.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 93,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 329
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            331
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            330
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 201,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        5280.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 97,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 330,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            332
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 202,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5280.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 99,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 331
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 332,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            333
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            344
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 203,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5660.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 101,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 333
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            335
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            334
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 204,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        5660.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 105,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 334,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            336
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 205,
+      "type": "VHS_SplitImages",
+      "pos": [
+        5660.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 107,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 335
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 336,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            337
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            346
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 206,
+      "type": "VHS_SplitImages",
+      "pos": [
+        6030.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 109,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 337
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            339
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            338
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 207,
+      "type": "SeargeIntegerMath",
+      "pos": [
+        6030.1135289976755,
+        920.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 113,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "a",
+          "type": "INT",
+          "link": 338,
+          "widget": {
+            "name": "a"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "result",
+          "type": "INT",
+          "links": [
+            340
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SeargeIntegerMath"
+      },
+      "widgets_values": [
+        "a - c",
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "id": 208,
+      "type": "VHS_SplitImages",
+      "pos": [
+        6030.1135289976755,
+        960.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 94
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 115,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 339
+        },
+        {
+          "name": "split_index",
+          "type": "INT",
+          "link": 340,
+          "widget": {
+            "name": "split_index"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [
+            348
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 30
+      }
+    },
+    {
+      "id": 209,
+      "type": "ImageBatch",
+      "pos": [
+        5140.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 94,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 341
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 342
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            343
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 210,
+      "type": "ImageBatch",
+      "pos": [
+        5500.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 102,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 343
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 344
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            345
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 211,
+      "type": "ImageBatch",
+      "pos": [
+        5890.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 110,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 345
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 346
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            347
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 159,
+      "type": "VHS_SplitImages",
+      "pos": [
+        1459.1135289976755,
+        880.1839209478512
+      ],
+      "size": {
+        "0": 220,
+        "1": 120
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 349
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE_A",
+          "type": "IMAGE",
+          "links": [
+            271
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "A_count",
+          "type": "INT",
+          "links": [
+            270
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "IMAGE_B",
+          "type": "IMAGE",
+          "links": [],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "B_count",
+          "type": "INT",
+          "links": null,
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VHS_SplitImages"
+      },
+      "widgets_values": {
+        "split_index": 32
+      }
+    },
+    {
+      "id": 212,
+      "type": "ImageBatch",
+      "pos": [
+        6250.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 117,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 347
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 348
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            352
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 14,
+      "type": "VideoLinearCFGGuidance",
+      "pos": [
+        490,
+        270
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 23
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            39,
+            360
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VideoLinearCFGGuidance"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SVD_img2vid_Conditioning",
+      "pos": [
+        490,
+        400
+      ],
+      "size": {
+        "0": 315,
+        "1": 218
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 24
+        },
+        {
+          "name": "init_image",
+          "type": "IMAGE",
+          "link": 41,
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            40
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            17
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SVD_img2vid_Conditioning"
+      },
+      "widgets_values": [
+        1024,
+        576,
+        14,
+        127,
+        6,
+        0.33
+      ]
+    },
+    {
+      "id": 23,
+      "type": "LoadImage",
+      "pos": [
+        150,
+        420
+      ],
+      "size": {
+        "0": 315,
+        "1": 314.0000305175781
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            41,
+            367
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "0x0.webp",
+        "image"
+      ]
+    },
+    {
+      "id": 190,
+      "type": "ImageBatch",
+      "pos": [
+        3680.1135289976755,
+        1040.1839209478512
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 62,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 313
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 314
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            315
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 222,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1470,
+        380
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 370
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 7,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/webp",
+        "pingpong": false,
+        "save_image": false,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00020.webp",
+            "subfolder": "",
+            "type": "temp",
+            "format": "image/webp"
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1210,
+        380
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            349,
+            351,
+            370
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 221,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        1460,
+        1130
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 371
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 7,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/webp",
+        "pingpong": false,
+        "save_image": false,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00021.webp",
+            "subfolder": "",
+            "type": "temp",
+            "format": "image/webp"
+          }
+        }
+      }
+    },
+    {
+      "id": 67,
+      "type": "VAEDecode",
+      "pos": [
+        1200,
+        1130
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 120
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 261
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            257,
+            258,
+            371
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 15,
+      "type": "ImageOnlyCheckpointLoader",
+      "pos": [
+        90,
+        270
+      ],
+      "size": {
+        "0": 369.6000061035156,
+        "1": 98
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            23
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "links": [
+            24,
+            369
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            25,
+            26,
+            261,
+            368
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageOnlyCheckpointLoader"
+      },
+      "widgets_values": [
+        "video\\svd.safetensors"
+      ]
+    },
+    {
+      "id": 218,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        6620,
+        380
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 121,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 357
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 7,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/webp",
+        "pingpong": false,
+        "save_image": false,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00019.webp",
+            "subfolder": "",
+            "type": "temp",
+            "format": "image/webp"
+          }
+        }
+      }
+    },
+    {
+      "id": 223,
+      "type": "SVD_img2vid_Conditioning",
+      "pos": [
+        500,
+        1150
+      ],
+      "size": {
+        "0": 315,
+        "1": 218
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 369
+        },
+        {
+          "name": "init_image",
+          "type": "IMAGE",
+          "link": 367,
+          "slot_index": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 368
+        }
+      ],
+      "outputs": [
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "links": [
+            376
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "links": [
+            365
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "latent",
+          "type": "LATENT",
+          "links": [
+            366
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SVD_img2vid_Conditioning"
+      },
+      "widgets_values": [
+        1024,
+        576,
+        14,
+        256,
+        6,
+        0.33
+      ]
+    },
+    {
+      "id": 213,
+      "type": "ImageBatch",
+      "pos": [
+        6400,
+        380
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 119,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 351
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 352
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            353,
+            357
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 153,
+      "type": "ImageBatch",
+      "pos": [
+        6400,
+        1130
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 120,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 258
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 259
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            354,
+            356
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 215,
+      "type": "ImageBatch",
+      "pos": [
+        6620,
+        870
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 122,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image1",
+          "type": "IMAGE",
+          "link": 353
+        },
+        {
+          "name": "image2",
+          "type": "IMAGE",
+          "link": 354
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            358
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ImageBatch"
+      }
+    },
+    {
+      "id": 217,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        6620,
+        1130
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 123,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 356
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 7,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/webp",
+        "pingpong": false,
+        "save_image": false,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00022.webp",
+            "subfolder": "",
+            "type": "temp",
+            "format": "image/webp"
+          }
+        }
+      }
+    },
+    {
+      "id": 219,
+      "type": "VHS_VideoCombine",
+      "pos": [
+        7040,
+        870
+      ],
+      "size": [
+        315,
+        414.3125
+      ],
+      "flags": {},
+      "order": 124,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 358
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "VHS_VideoCombine"
+      },
+      "widgets_values": {
+        "frame_rate": 7,
+        "loop_count": 0,
+        "filename_prefix": "AnimateDiff",
+        "format": "image/webp",
+        "pingpong": false,
+        "save_image": false,
+        "crf": 20,
+        "save_metadata": true,
+        "audio_file": "",
+        "videopreview": {
+          "hidden": false,
+          "paused": false,
+          "params": {
+            "filename": "AnimateDiff_00023.webp",
+            "subfolder": "",
+            "type": "temp",
+            "format": "image/webp"
+          }
+        }
+      }
+    }
+  ],
+  "links": [
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      17,
+      12,
+      1,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      18,
+      12,
+      2,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      23,
+      15,
+      0,
+      14,
+      0,
+      "MODEL"
+    ],
+    [
+      24,
+      15,
+      1,
+      12,
+      0,
+      "CLIP_VISION"
+    ],
+    [
+      25,
+      15,
+      2,
+      12,
+      2,
+      "VAE"
+    ],
+    [
+      26,
+      15,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      39,
+      14,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      40,
+      12,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      41,
+      23,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      120,
+      66,
+      0,
+      67,
+      0,
+      "LATENT"
+    ],
+    [
+      127,
+      71,
+      1,
+      72,
+      0,
+      "INT"
+    ],
+    [
+      128,
+      71,
+      0,
+      73,
+      0,
+      "IMAGE"
+    ],
+    [
+      129,
+      72,
+      0,
+      73,
+      1,
+      "INT"
+    ],
+    [
+      130,
+      74,
+      1,
+      75,
+      0,
+      "INT"
+    ],
+    [
+      131,
+      74,
+      0,
+      76,
+      0,
+      "IMAGE"
+    ],
+    [
+      132,
+      75,
+      0,
+      76,
+      1,
+      "INT"
+    ],
+    [
+      133,
+      73,
+      0,
+      74,
+      0,
+      "IMAGE"
+    ],
+    [
+      134,
+      77,
+      1,
+      78,
+      0,
+      "INT"
+    ],
+    [
+      135,
+      77,
+      0,
+      79,
+      0,
+      "IMAGE"
+    ],
+    [
+      136,
+      78,
+      0,
+      79,
+      1,
+      "INT"
+    ],
+    [
+      137,
+      80,
+      1,
+      81,
+      0,
+      "INT"
+    ],
+    [
+      138,
+      80,
+      0,
+      82,
+      0,
+      "IMAGE"
+    ],
+    [
+      139,
+      81,
+      0,
+      82,
+      1,
+      "INT"
+    ],
+    [
+      140,
+      76,
+      0,
+      77,
+      0,
+      "IMAGE"
+    ],
+    [
+      142,
+      79,
+      0,
+      80,
+      0,
+      "IMAGE"
+    ],
+    [
+      143,
+      83,
+      1,
+      84,
+      0,
+      "INT"
+    ],
+    [
+      144,
+      83,
+      0,
+      85,
+      0,
+      "IMAGE"
+    ],
+    [
+      145,
+      84,
+      0,
+      85,
+      1,
+      "INT"
+    ],
+    [
+      173,
+      82,
+      0,
+      83,
+      0,
+      "IMAGE"
+    ],
+    [
+      186,
+      79,
+      2,
+      114,
+      1,
+      "IMAGE"
+    ],
+    [
+      187,
+      114,
+      0,
+      115,
+      0,
+      "IMAGE"
+    ],
+    [
+      188,
+      82,
+      2,
+      115,
+      1,
+      "IMAGE"
+    ],
+    [
+      189,
+      115,
+      0,
+      116,
+      0,
+      "IMAGE"
+    ],
+    [
+      190,
+      85,
+      2,
+      116,
+      1,
+      "IMAGE"
+    ],
+    [
+      203,
+      117,
+      1,
+      118,
+      0,
+      "INT"
+    ],
+    [
+      204,
+      117,
+      0,
+      119,
+      0,
+      "IMAGE"
+    ],
+    [
+      205,
+      118,
+      0,
+      119,
+      1,
+      "INT"
+    ],
+    [
+      206,
+      119,
+      0,
+      120,
+      0,
+      "IMAGE"
+    ],
+    [
+      207,
+      120,
+      1,
+      121,
+      0,
+      "INT"
+    ],
+    [
+      208,
+      120,
+      0,
+      122,
+      0,
+      "IMAGE"
+    ],
+    [
+      209,
+      121,
+      0,
+      122,
+      1,
+      "INT"
+    ],
+    [
+      210,
+      122,
+      0,
+      123,
+      0,
+      "IMAGE"
+    ],
+    [
+      211,
+      123,
+      1,
+      124,
+      0,
+      "INT"
+    ],
+    [
+      212,
+      123,
+      0,
+      125,
+      0,
+      "IMAGE"
+    ],
+    [
+      213,
+      124,
+      0,
+      125,
+      1,
+      "INT"
+    ],
+    [
+      214,
+      125,
+      0,
+      126,
+      0,
+      "IMAGE"
+    ],
+    [
+      215,
+      126,
+      1,
+      127,
+      0,
+      "INT"
+    ],
+    [
+      216,
+      126,
+      0,
+      128,
+      0,
+      "IMAGE"
+    ],
+    [
+      217,
+      127,
+      0,
+      128,
+      1,
+      "INT"
+    ],
+    [
+      218,
+      119,
+      2,
+      129,
+      1,
+      "IMAGE"
+    ],
+    [
+      219,
+      129,
+      0,
+      130,
+      0,
+      "IMAGE"
+    ],
+    [
+      220,
+      122,
+      2,
+      130,
+      1,
+      "IMAGE"
+    ],
+    [
+      221,
+      130,
+      0,
+      131,
+      0,
+      "IMAGE"
+    ],
+    [
+      222,
+      125,
+      2,
+      131,
+      1,
+      "IMAGE"
+    ],
+    [
+      223,
+      131,
+      0,
+      132,
+      0,
+      "IMAGE"
+    ],
+    [
+      224,
+      128,
+      2,
+      132,
+      1,
+      "IMAGE"
+    ],
+    [
+      225,
+      85,
+      0,
+      117,
+      0,
+      "IMAGE"
+    ],
+    [
+      226,
+      116,
+      0,
+      129,
+      0,
+      "IMAGE"
+    ],
+    [
+      227,
+      133,
+      1,
+      134,
+      0,
+      "INT"
+    ],
+    [
+      228,
+      133,
+      0,
+      135,
+      0,
+      "IMAGE"
+    ],
+    [
+      229,
+      134,
+      0,
+      135,
+      1,
+      "INT"
+    ],
+    [
+      230,
+      135,
+      2,
+      136,
+      1,
+      "IMAGE"
+    ],
+    [
+      231,
+      135,
+      0,
+      137,
+      0,
+      "IMAGE"
+    ],
+    [
+      232,
+      137,
+      1,
+      138,
+      0,
+      "INT"
+    ],
+    [
+      233,
+      137,
+      0,
+      139,
+      0,
+      "IMAGE"
+    ],
+    [
+      234,
+      138,
+      0,
+      139,
+      1,
+      "INT"
+    ],
+    [
+      235,
+      139,
+      0,
+      140,
+      0,
+      "IMAGE"
+    ],
+    [
+      236,
+      140,
+      1,
+      141,
+      0,
+      "INT"
+    ],
+    [
+      237,
+      140,
+      0,
+      142,
+      0,
+      "IMAGE"
+    ],
+    [
+      238,
+      141,
+      0,
+      142,
+      1,
+      "INT"
+    ],
+    [
+      239,
+      142,
+      0,
+      143,
+      0,
+      "IMAGE"
+    ],
+    [
+      240,
+      143,
+      1,
+      144,
+      0,
+      "INT"
+    ],
+    [
+      241,
+      143,
+      0,
+      145,
+      0,
+      "IMAGE"
+    ],
+    [
+      242,
+      144,
+      0,
+      145,
+      1,
+      "INT"
+    ],
+    [
+      243,
+      145,
+      0,
+      146,
+      0,
+      "IMAGE"
+    ],
+    [
+      244,
+      146,
+      1,
+      147,
+      0,
+      "INT"
+    ],
+    [
+      245,
+      146,
+      0,
+      148,
+      0,
+      "IMAGE"
+    ],
+    [
+      246,
+      147,
+      0,
+      148,
+      1,
+      "INT"
+    ],
+    [
+      247,
+      136,
+      0,
+      149,
+      0,
+      "IMAGE"
+    ],
+    [
+      248,
+      139,
+      2,
+      149,
+      1,
+      "IMAGE"
+    ],
+    [
+      249,
+      149,
+      0,
+      150,
+      0,
+      "IMAGE"
+    ],
+    [
+      250,
+      142,
+      2,
+      150,
+      1,
+      "IMAGE"
+    ],
+    [
+      251,
+      150,
+      0,
+      151,
+      0,
+      "IMAGE"
+    ],
+    [
+      252,
+      145,
+      2,
+      151,
+      1,
+      "IMAGE"
+    ],
+    [
+      253,
+      151,
+      0,
+      152,
+      0,
+      "IMAGE"
+    ],
+    [
+      254,
+      148,
+      2,
+      152,
+      1,
+      "IMAGE"
+    ],
+    [
+      255,
+      128,
+      0,
+      133,
+      0,
+      "IMAGE"
+    ],
+    [
+      256,
+      132,
+      0,
+      136,
+      0,
+      "IMAGE"
+    ],
+    [
+      257,
+      67,
+      0,
+      71,
+      0,
+      "IMAGE"
+    ],
+    [
+      258,
+      67,
+      0,
+      153,
+      0,
+      "IMAGE"
+    ],
+    [
+      259,
+      152,
+      0,
+      153,
+      1,
+      "IMAGE"
+    ],
+    [
+      261,
+      15,
+      2,
+      67,
+      1,
+      "VAE"
+    ],
+    [
+      268,
+      76,
+      2,
+      114,
+      0,
+      "IMAGE"
+    ],
+    [
+      270,
+      159,
+      1,
+      160,
+      0,
+      "INT"
+    ],
+    [
+      271,
+      159,
+      0,
+      161,
+      0,
+      "IMAGE"
+    ],
+    [
+      272,
+      160,
+      0,
+      161,
+      1,
+      "INT"
+    ],
+    [
+      273,
+      161,
+      0,
+      162,
+      0,
+      "IMAGE"
+    ],
+    [
+      274,
+      162,
+      1,
+      163,
+      0,
+      "INT"
+    ],
+    [
+      275,
+      162,
+      0,
+      164,
+      0,
+      "IMAGE"
+    ],
+    [
+      276,
+      163,
+      0,
+      164,
+      1,
+      "INT"
+    ],
+    [
+      277,
+      164,
+      0,
+      165,
+      0,
+      "IMAGE"
+    ],
+    [
+      278,
+      165,
+      1,
+      166,
+      0,
+      "INT"
+    ],
+    [
+      279,
+      165,
+      0,
+      167,
+      0,
+      "IMAGE"
+    ],
+    [
+      280,
+      166,
+      0,
+      167,
+      1,
+      "INT"
+    ],
+    [
+      281,
+      167,
+      0,
+      168,
+      0,
+      "IMAGE"
+    ],
+    [
+      282,
+      168,
+      1,
+      169,
+      0,
+      "INT"
+    ],
+    [
+      283,
+      168,
+      0,
+      170,
+      0,
+      "IMAGE"
+    ],
+    [
+      284,
+      169,
+      0,
+      170,
+      1,
+      "INT"
+    ],
+    [
+      285,
+      170,
+      0,
+      171,
+      0,
+      "IMAGE"
+    ],
+    [
+      286,
+      171,
+      1,
+      172,
+      0,
+      "INT"
+    ],
+    [
+      287,
+      171,
+      0,
+      173,
+      0,
+      "IMAGE"
+    ],
+    [
+      288,
+      172,
+      0,
+      173,
+      1,
+      "INT"
+    ],
+    [
+      289,
+      164,
+      2,
+      174,
+      0,
+      "IMAGE"
+    ],
+    [
+      290,
+      167,
+      2,
+      174,
+      1,
+      "IMAGE"
+    ],
+    [
+      291,
+      174,
+      0,
+      175,
+      0,
+      "IMAGE"
+    ],
+    [
+      292,
+      170,
+      2,
+      175,
+      1,
+      "IMAGE"
+    ],
+    [
+      293,
+      175,
+      0,
+      176,
+      0,
+      "IMAGE"
+    ],
+    [
+      294,
+      173,
+      2,
+      176,
+      1,
+      "IMAGE"
+    ],
+    [
+      295,
+      173,
+      0,
+      177,
+      0,
+      "IMAGE"
+    ],
+    [
+      296,
+      177,
+      1,
+      178,
+      0,
+      "INT"
+    ],
+    [
+      297,
+      177,
+      0,
+      179,
+      0,
+      "IMAGE"
+    ],
+    [
+      298,
+      178,
+      0,
+      179,
+      1,
+      "INT"
+    ],
+    [
+      299,
+      179,
+      0,
+      180,
+      0,
+      "IMAGE"
+    ],
+    [
+      300,
+      180,
+      1,
+      181,
+      0,
+      "INT"
+    ],
+    [
+      301,
+      180,
+      0,
+      182,
+      0,
+      "IMAGE"
+    ],
+    [
+      302,
+      181,
+      0,
+      182,
+      1,
+      "INT"
+    ],
+    [
+      303,
+      182,
+      0,
+      183,
+      0,
+      "IMAGE"
+    ],
+    [
+      304,
+      183,
+      1,
+      184,
+      0,
+      "INT"
+    ],
+    [
+      305,
+      183,
+      0,
+      185,
+      0,
+      "IMAGE"
+    ],
+    [
+      306,
+      184,
+      0,
+      185,
+      1,
+      "INT"
+    ],
+    [
+      307,
+      185,
+      0,
+      186,
+      0,
+      "IMAGE"
+    ],
+    [
+      308,
+      186,
+      1,
+      187,
+      0,
+      "INT"
+    ],
+    [
+      309,
+      186,
+      0,
+      188,
+      0,
+      "IMAGE"
+    ],
+    [
+      310,
+      187,
+      0,
+      188,
+      1,
+      "INT"
+    ],
+    [
+      311,
+      176,
+      0,
+      189,
+      0,
+      "IMAGE"
+    ],
+    [
+      312,
+      179,
+      2,
+      189,
+      1,
+      "IMAGE"
+    ],
+    [
+      313,
+      189,
+      0,
+      190,
+      0,
+      "IMAGE"
+    ],
+    [
+      314,
+      182,
+      2,
+      190,
+      1,
+      "IMAGE"
+    ],
+    [
+      315,
+      190,
+      0,
+      191,
+      0,
+      "IMAGE"
+    ],
+    [
+      316,
+      185,
+      2,
+      191,
+      1,
+      "IMAGE"
+    ],
+    [
+      317,
+      191,
+      0,
+      192,
+      0,
+      "IMAGE"
+    ],
+    [
+      318,
+      188,
+      2,
+      192,
+      1,
+      "IMAGE"
+    ],
+    [
+      319,
+      188,
+      0,
+      193,
+      0,
+      "IMAGE"
+    ],
+    [
+      320,
+      193,
+      1,
+      194,
+      0,
+      "INT"
+    ],
+    [
+      321,
+      193,
+      0,
+      195,
+      0,
+      "IMAGE"
+    ],
+    [
+      322,
+      194,
+      0,
+      195,
+      1,
+      "INT"
+    ],
+    [
+      323,
+      192,
+      0,
+      196,
+      0,
+      "IMAGE"
+    ],
+    [
+      324,
+      195,
+      2,
+      196,
+      1,
+      "IMAGE"
+    ],
+    [
+      325,
+      195,
+      0,
+      197,
+      0,
+      "IMAGE"
+    ],
+    [
+      326,
+      197,
+      1,
+      198,
+      0,
+      "INT"
+    ],
+    [
+      327,
+      197,
+      0,
+      199,
+      0,
+      "IMAGE"
+    ],
+    [
+      328,
+      198,
+      0,
+      199,
+      1,
+      "INT"
+    ],
+    [
+      329,
+      199,
+      0,
+      200,
+      0,
+      "IMAGE"
+    ],
+    [
+      330,
+      200,
+      1,
+      201,
+      0,
+      "INT"
+    ],
+    [
+      331,
+      200,
+      0,
+      202,
+      0,
+      "IMAGE"
+    ],
+    [
+      332,
+      201,
+      0,
+      202,
+      1,
+      "INT"
+    ],
+    [
+      333,
+      202,
+      0,
+      203,
+      0,
+      "IMAGE"
+    ],
+    [
+      334,
+      203,
+      1,
+      204,
+      0,
+      "INT"
+    ],
+    [
+      335,
+      203,
+      0,
+      205,
+      0,
+      "IMAGE"
+    ],
+    [
+      336,
+      204,
+      0,
+      205,
+      1,
+      "INT"
+    ],
+    [
+      337,
+      205,
+      0,
+      206,
+      0,
+      "IMAGE"
+    ],
+    [
+      338,
+      206,
+      1,
+      207,
+      0,
+      "INT"
+    ],
+    [
+      339,
+      206,
+      0,
+      208,
+      0,
+      "IMAGE"
+    ],
+    [
+      340,
+      207,
+      0,
+      208,
+      1,
+      "INT"
+    ],
+    [
+      341,
+      196,
+      0,
+      209,
+      0,
+      "IMAGE"
+    ],
+    [
+      342,
+      199,
+      2,
+      209,
+      1,
+      "IMAGE"
+    ],
+    [
+      343,
+      209,
+      0,
+      210,
+      0,
+      "IMAGE"
+    ],
+    [
+      344,
+      202,
+      2,
+      210,
+      1,
+      "IMAGE"
+    ],
+    [
+      345,
+      210,
+      0,
+      211,
+      0,
+      "IMAGE"
+    ],
+    [
+      346,
+      205,
+      2,
+      211,
+      1,
+      "IMAGE"
+    ],
+    [
+      347,
+      211,
+      0,
+      212,
+      0,
+      "IMAGE"
+    ],
+    [
+      348,
+      208,
+      2,
+      212,
+      1,
+      "IMAGE"
+    ],
+    [
+      349,
+      8,
+      0,
+      159,
+      0,
+      "IMAGE"
+    ],
+    [
+      351,
+      8,
+      0,
+      213,
+      0,
+      "IMAGE"
+    ],
+    [
+      352,
+      212,
+      0,
+      213,
+      1,
+      "IMAGE"
+    ],
+    [
+      353,
+      213,
+      0,
+      215,
+      0,
+      "IMAGE"
+    ],
+    [
+      354,
+      153,
+      0,
+      215,
+      1,
+      "IMAGE"
+    ],
+    [
+      356,
+      153,
+      0,
+      217,
+      0,
+      "IMAGE"
+    ],
+    [
+      357,
+      213,
+      0,
+      218,
+      0,
+      "IMAGE"
+    ],
+    [
+      358,
+      215,
+      0,
+      219,
+      0,
+      "IMAGE"
+    ],
+    [
+      360,
+      14,
+      0,
+      66,
+      0,
+      "MODEL"
+    ],
+    [
+      365,
+      223,
+      1,
+      66,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      366,
+      223,
+      2,
+      66,
+      3,
+      "LATENT"
+    ],
+    [
+      367,
+      23,
+      0,
+      223,
+      1,
+      "IMAGE"
+    ],
+    [
+      368,
+      15,
+      2,
+      223,
+      2,
+      "VAE"
+    ],
+    [
+      369,
+      15,
+      1,
+      223,
+      0,
+      "CLIP_VISION"
+    ],
+    [
+      370,
+      8,
+      0,
+      222,
+      0,
+      "IMAGE"
+    ],
+    [
+      371,
+      67,
+      0,
+      221,
+      0,
+      "IMAGE"
+    ],
+    [
+      376,
+      223,
+      0,
+      66,
+      1,
+      "CONDITIONING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "Image to Video",
+      "bounding": [
+        478,
+        192,
+        954,
+        478
+      ],
+      "color": "#8A8",
+      "font_size": 24
+    },
+    {
+      "title": "Invert Frame order, minus last frame - for 14 frames batch",
+      "bounding": [
+        1450,
+        808,
+        4965,
+        248
+      ],
+      "color": "#b58b2a",
+      "font_size": 24
+    },
+    {
+      "title": "Invert Frame order, minus last frame - for 14 frames batch",
+      "bounding": [
+        1446,
+        1557,
+        4948,
+        225
+      ],
+      "color": "#b58b2a",
+      "font_size": 24
+    }
+  ],
+  "config": {},
+  "extra": {},
+  "version": 0.4
+}

@@ -1,0 +1,973 @@
+{
+  "last_node_id": 76,
+  "last_link_id": 108,
+  "nodes": [
+    {
+      "id": 16,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        -125,
+        211
+      ],
+      "size": {
+        "0": 330,
+        "1": 100
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            41,
+            93
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            74,
+            78,
+            79
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": null,
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "epicrealism_naturalSinRC1VAE.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 17,
+      "type": "VAELoader",
+      "pos": [
+        -148,
+        375
+      ],
+      "size": {
+        "0": 360,
+        "1": 60
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "vae-ft-mse-840000-ema-pruned.safetensors"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 52,
+      "type": "IF_SaveText",
+      "pos": [
+        274,
+        -58
+      ],
+      "size": {
+        "0": 315,
+        "1": 238
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "question_input",
+          "type": "STRING",
+          "link": 103,
+          "widget": {
+            "name": "question_input"
+          }
+        },
+        {
+          "name": "response_input",
+          "type": "STRING",
+          "link": 104,
+          "widget": {
+            "name": "response_input"
+          }
+        },
+        {
+          "name": "negative_input",
+          "type": "STRING",
+          "link": 105,
+          "widget": {
+            "name": "negative_input"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "Question",
+          "type": "STRING",
+          "links": [
+            61
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Response",
+          "type": "STRING",
+          "links": [
+            62,
+            99
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "Negative",
+          "type": "STRING",
+          "links": [
+            63,
+            98,
+            108
+          ],
+          "shape": 3,
+          "slot_index": 2
+        },
+        {
+          "name": "Turn",
+          "type": "STRING",
+          "links": [
+            60
+          ],
+          "shape": 3,
+          "slot_index": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IF_SaveText"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        true,
+        "txt",
+        "create"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 55,
+      "type": "ShowText|pysssss",
+      "pos": [
+        649,
+        -43
+      ],
+      "size": {
+        "0": 320,
+        "1": 80
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 61,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "DOG AND CAT"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 56,
+      "type": "ShowText|pysssss",
+      "pos": [
+        649,
+        2
+      ],
+      "size": {
+        "0": 320,
+        "1": 250
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 62,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "Best quality, professional, Portrait, photo shoot, A serene forest setting, a loyal dog and a playful cat coexisting in harmony, the dog with a kind expression, brown fur, tail wagging, while the cat playsfully nudges its muzzle against the dog's. The lush greenery, rustling leaves, gentle sunlight filtering through the canopy, providing a warm and comforting ambience.                                   \nMake a prompt for this Subject:\n neonpunk style, cyberpunk-aesthetics, vaporwave-influence, neon, vibes, vibrant, stunningly-beautiful, crisp, shimmering-surface-effects, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate,"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 68,
+      "type": "Reroute",
+      "pos": [
+        807,
+        -69
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false,
+        "ttNbgOverride": {
+          "color": "#322",
+          "bgcolor": "#533",
+          "groupcolor": "#A88"
+        }
+      },
+      "color": "#322",
+      "bgcolor": "#533"
+    },
+    {
+      "id": 26,
+      "type": "CLIPTextEncode",
+      "pos": [
+        804,
+        1
+      ],
+      "size": {
+        "0": 420,
+        "1": 160
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 78
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 99,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            18
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "C+ ",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 27,
+      "type": "CLIPTextEncode",
+      "pos": [
+        651,
+        50
+      ],
+      "size": {
+        "0": 430,
+        "1": 180
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 79
+        },
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 98,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            19
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "C-",
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 57,
+      "type": "ShowText|pysssss",
+      "pos": [
+        754,
+        51
+      ],
+      "size": {
+        "0": 320,
+        "1": 110
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 63,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "bad-hands-5, FastNegativeEmbedding, low quality:1.4, jpeg artifacts:1.5, letterbox, beginner, amateur, signature, watermark, username, logo, greyscale, monochrome, bad anatomy, missing arms, missing legs, extra arms, extra legs, bad legs, bad feet, extra fingers, fewer fingers, bad hand, poorly drawn face, mutation, deformed, ((head wear)), ((cropped head)), ((head out of frame)), child:1.1, female:1.9, woman:1.9, girl:1.9"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 24,
+      "type": "KSampler",
+      "pos": [
+        635,
+        104
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 93
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 18
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            21
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1056358905702460,
+        "randomize",
+        40,
+        7.49,
+        "dpmpp_2m_sde",
+        "karras",
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 54,
+      "type": "ShowText|pysssss",
+      "pos": [
+        266,
+        216
+      ],
+      "size": {
+        "0": 330,
+        "1": 310
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text",
+          "type": "STRING",
+          "link": 60,
+          "widget": {
+            "name": "text"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ShowText|pysssss"
+      },
+      "widgets_values": [
+        "",
+        "ID: 48dd2b3c-8ae8-486c-8649-d1da29a84678\nQuestion: DOG AND CAT\nResponse: Best quality, professional, Portrait, photo shoot, A serene forest setting, a loyal dog and a playful cat coexisting in harmony, the dog with a kind expression, brown fur, tail wagging, while the cat playsfully nudges its muzzle against the dog's. The lush greenery, rustling leaves, gentle sunlight filtering through the canopy, providing a warm and comforting ambience.                                   \nMake a prompt for this Subject:\n neonpunk style, cyberpunk-aesthetics, vaporwave-influence, neon, vibes, vibrant, stunningly-beautiful, crisp, shimmering-surface-effects, sleek, ultramodern, magenta highlights, dark purple shadows, high contrast, cinematic, ultra detailed, intricate,\nNegative: bad-hands-5, FastNegativeEmbedding, low quality:1.4, jpeg artifacts:1.5, letterbox, beginner, amateur, signature, watermark, username, logo, greyscale, monochrome, bad anatomy, missing arms, missing legs, extra arms, extra legs, bad legs, bad feet, extra fingers, fewer fingers, bad hand, poorly drawn face, mutation, deformed, ((head wear)), ((cropped head)), ((head out of frame)), child:1.1, female:1.9, woman:1.9, girl:1.9"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 40,
+      "type": "LoraLoader",
+      "pos": [
+        645,
+        411
+      ],
+      "size": {
+        "0": 315,
+        "1": 126
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 41
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 74
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "LCM_loRa_SDXL.safetensors",
+        1,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 28,
+      "type": "VAEDecode",
+      "pos": [
+        668,
+        468
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {
+        "collapsed": false
+      },
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 21
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 29,
+      "type": "SaveImage",
+      "pos": [
+        965,
+        -74
+      ],
+      "size": [
+        643.7814777394274,
+        831.4433893975853
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 22
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "SaveImage"
+      },
+      "widgets_values": [
+        "_IF_prompt_Mkr_"
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 25,
+      "type": "EmptyLatentImage",
+      "pos": [
+        793,
+        411
+      ],
+      "size": {
+        "0": 315,
+        "1": 106
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        920,
+        1280,
+        1
+      ],
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 76,
+      "type": "IF_PromptMkr",
+      "pos": [
+        -149,
+        -59
+      ],
+      "size": {
+        "0": 400,
+        "1": 212
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "Question",
+          "type": "STRING",
+          "links": [
+            103
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "Response",
+          "type": "STRING",
+          "links": [
+            104
+          ],
+          "shape": 3,
+          "slot_index": 1
+        },
+        {
+          "name": "Negative",
+          "type": "STRING",
+          "links": [
+            105
+          ],
+          "shape": 3,
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IF_PromptMkr"
+      },
+      "widgets_values": [
+        "girl in class",
+        "nous-hermes:latest",
+        "Portrait",
+        "NeonPunk",
+        "BadMacho"
+      ]
+    }
+  ],
+  "links": [
+    [
+      18,
+      26,
+      0,
+      24,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      19,
+      27,
+      0,
+      24,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      20,
+      25,
+      0,
+      24,
+      3,
+      "LATENT"
+    ],
+    [
+      21,
+      24,
+      0,
+      28,
+      0,
+      "LATENT"
+    ],
+    [
+      22,
+      28,
+      0,
+      29,
+      0,
+      "IMAGE"
+    ],
+    [
+      28,
+      17,
+      0,
+      28,
+      1,
+      "VAE"
+    ],
+    [
+      41,
+      16,
+      0,
+      40,
+      0,
+      "MODEL"
+    ],
+    [
+      60,
+      52,
+      3,
+      54,
+      0,
+      "STRING"
+    ],
+    [
+      61,
+      52,
+      0,
+      55,
+      0,
+      "STRING"
+    ],
+    [
+      62,
+      52,
+      1,
+      56,
+      0,
+      "STRING"
+    ],
+    [
+      63,
+      52,
+      2,
+      57,
+      0,
+      "STRING"
+    ],
+    [
+      74,
+      16,
+      1,
+      40,
+      1,
+      "CLIP"
+    ],
+    [
+      78,
+      16,
+      1,
+      26,
+      0,
+      "CLIP"
+    ],
+    [
+      79,
+      16,
+      1,
+      27,
+      0,
+      "CLIP"
+    ],
+    [
+      93,
+      16,
+      0,
+      24,
+      0,
+      "MODEL"
+    ],
+    [
+      98,
+      52,
+      2,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      99,
+      52,
+      1,
+      26,
+      1,
+      "STRING"
+    ],
+    [
+      103,
+      76,
+      0,
+      52,
+      0,
+      "STRING"
+    ],
+    [
+      104,
+      76,
+      1,
+      52,
+      1,
+      "STRING"
+    ],
+    [
+      105,
+      76,
+      2,
+      52,
+      2,
+      "STRING"
+    ],
+    [
+      108,
+      52,
+      2,
+      68,
+      0,
+      "*"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "info": {
+      "name": "workflow",
+      "author": "",
+      "description": "",
+      "version": "1",
+      "created": "2024-03-12T11:34:02.047Z",
+      "modified": "2024-03-12T12:48:22.004Z",
+      "software": "ComfyUI"
+    }
+  },
+  "version": 0.4
+}

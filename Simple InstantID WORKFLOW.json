@@ -1,0 +1,2301 @@
+{
+  "last_node_id": 36,
+  "last_link_id": 39,
+  "nodes": [
+    {
+      "id": 2,
+      "type": "IDControlNetLoader",
+      "pos": [
+        1007.1561738115223,
+        381.092205625391
+      ],
+      "size": {
+        "0": 310,
+        "1": 60
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "controlnet",
+          "type": "MODEL",
+          "links": [
+            11
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDControlNetLoader"
+      },
+      "widgets_values": [
+        "D:\\COMFYUI\\ComfyUI\\custom_nodes\\ComfyUI-InstantID\\checkpoints\\controlnet"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "Ipadapter_instantidLoader",
+      "pos": [
+        1005.1561738115223,
+        614.0922056253902
+      ],
+      "size": {
+        "0": 310,
+        "1": 82
+      },
+      "flags": {},
+      "order": 28,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            14
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "Ipadapter_instantidLoader"
+      },
+      "widgets_values": [
+        "D:\\COMFYUI\\ComfyUI\\custom_nodes\\ComfyUI-InstantID\\checkpoints\\",
+        "ip-adapter.bin"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "SetNode",
+      "pos": [
+        1272.1561738115208,
+        737.0922056253901
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 32,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "link": 14,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_MOD_FINAL",
+      "properties": {
+        "previousName": "MOD_FINAL"
+      },
+      "widgets_values": [
+        "MOD_FINAL"
+      ]
+    },
+    {
+      "id": 23,
+      "type": "GetNode",
+      "pos": [
+        1175.5469237841876,
+        949.4182227031449
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            23
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_FINAL",
+      "properties": {},
+      "widgets_values": [
+        "FINAL"
+      ]
+    },
+    {
+      "id": 22,
+      "type": "SetNode",
+      "pos": [
+        1866.1540956375004,
+        439.1541575671876
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 29,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 22,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_FINAL",
+      "properties": {
+        "previousName": "FINAL"
+      },
+      "widgets_values": [
+        "FINAL"
+      ]
+    },
+    {
+      "id": 17,
+      "type": "GetNode",
+      "pos": [
+        1437.1540956375002,
+        487.1541575671879
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            17
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_IMG_FACE",
+      "properties": {},
+      "widgets_values": [
+        "IMG_FACE"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "GetNode",
+      "pos": [
+        1430.1540956374997,
+        524.1541575671878
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            15
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_MOD_FINAL",
+      "properties": {},
+      "widgets_values": [
+        "MOD_FINAL"
+      ]
+    },
+    {
+      "id": 25,
+      "type": "GetNode",
+      "pos": [
+        1447.1540956375002,
+        565.1541575671874
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 4,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INSIGHTFACEMODEL",
+          "type": "INSIGHTFACEMODEL",
+          "links": [
+            25
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_IN_FACE",
+      "properties": {},
+      "widgets_values": [
+        "IN_FACE"
+      ]
+    },
+    {
+      "id": 14,
+      "type": "GetNode",
+      "pos": [
+        1464.1540956375002,
+        606.1541575671872
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 5,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            27
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_POSE",
+      "properties": {},
+      "widgets_values": [
+        "POSE"
+      ]
+    },
+    {
+      "id": 21,
+      "type": "GetNode",
+      "pos": [
+        1443.1540956375002,
+        646.1541575671872
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 6,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            21
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_POSITIVE",
+      "properties": {},
+      "widgets_values": [
+        "POSITIVE"
+      ]
+    },
+    {
+      "id": 18,
+      "type": "GetNode",
+      "pos": [
+        1440.1540956375002,
+        688.1541575671872
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 7,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_NEGATIVE",
+      "properties": {},
+      "widgets_values": [
+        "NEGATIVE"
+      ]
+    },
+    {
+      "id": 16,
+      "type": "SetNode",
+      "pos": [
+        967.2507142109375,
+        990.4852747460943
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 16,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_IMG_FACE",
+      "properties": {
+        "previousName": "IMG_FACE"
+      },
+      "widgets_values": [
+        "IMG_FACE"
+      ]
+    },
+    {
+      "id": 7,
+      "type": "LoadImage",
+      "pos": [
+        765.2507142109375,
+        1038.4852747460945
+      ],
+      "size": {
+        "0": 310,
+        "1": 430
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            16
+          ],
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "36ea5043697c004f5cd621bafbc36277 (19).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "SetNode",
+      "pos": [
+        958.576799113281,
+        1600.0770252890625
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 25,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "link": 26,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_POSE",
+      "properties": {
+        "previousName": "POSE"
+      },
+      "widgets_values": [
+        "POSE"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "InsightFaceLoader_Zho",
+      "pos": [
+        1518,
+        310
+      ],
+      "size": {
+        "0": 370,
+        "1": 60
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "INSIGHTFACEMODEL",
+          "type": "INSIGHTFACEMODEL",
+          "links": [
+            24
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InsightFaceLoader_Zho"
+      },
+      "widgets_values": [
+        "CUDA"
+      ]
+    },
+    {
+      "id": 24,
+      "type": "SetNode",
+      "pos": [
+        1766,
+        251
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 21,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "INSIGHTFACEMODEL",
+          "type": "INSIGHTFACEMODEL",
+          "link": 24,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_IN_FACE",
+      "properties": {
+        "previousName": "IN_FACE"
+      },
+      "widgets_values": [
+        "IN_FACE"
+      ]
+    },
+    {
+      "id": 29,
+      "type": "LoadImage",
+      "pos": [
+        11.199972513329461,
+        1813.8325389953106
+      ],
+      "size": [
+        315,
+        314.0000228881836
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ],
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "c621bb9bbe50b8dbcaefc1f378c4ef7f (2).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 30,
+      "type": "SetNode",
+      "pos": [
+        534.1999725133301,
+        1755.8325389953106
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 30,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 33,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_POS_LAZY",
+      "properties": {
+        "previousName": "POS_LAZY"
+      },
+      "widgets_values": [
+        "POS_LAZY"
+      ]
+    },
+    {
+      "id": 19,
+      "type": "SetNode",
+      "pos": [
+        790.8559005859382,
+        467.31398759765506
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 31,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 28,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_POSITIVE",
+      "properties": {
+        "previousName": "POSITIVE"
+      },
+      "widgets_values": [
+        "POSITIVE"
+      ]
+    },
+    {
+      "id": 31,
+      "type": "GetNode",
+      "pos": [
+        366.85590058593704,
+        547.3139875976549
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 11,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            34
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_POS_LAZY",
+      "properties": {},
+      "widgets_values": [
+        "POS_LAZY"
+      ]
+    },
+    {
+      "id": 5,
+      "type": "ID_Prompt_Styler",
+      "pos": [
+        144.9834419660158,
+        1466.2895765718747
+      ],
+      "size": {
+        "0": 370,
+        "1": 190
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "positive_prompt",
+          "type": "STRING",
+          "links": [
+            35
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "negative_prompt",
+          "type": "STRING",
+          "links": [
+            18
+          ],
+          "shape": 3,
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ID_Prompt_Styler"
+      },
+      "widgets_values": [
+        "a cute girl, game of thrones, freckles, winter is not coming this year, dragons, snow but not john snow, ",
+        "(lowres, low quality, worst quality:1.2), (text:1.2), watermark, painting, drawing, illustration, glitch, deformed, mutated, cross-eyed, ugly",
+        "(No style)"
+      ]
+    },
+    {
+      "id": 33,
+      "type": "SetNode",
+      "pos": [
+        534.9834419660166,
+        1480.2895765718747
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 23,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 35,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_POS_RAW",
+      "properties": {
+        "previousName": "POS_RAW"
+      },
+      "widgets_values": [
+        "POS_RAW"
+      ]
+    },
+    {
+      "id": 20,
+      "type": "SetNode",
+      "pos": [
+        535.9834419660167,
+        1520.2895765718747
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 24,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 18,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_NEGATIVE",
+      "properties": {
+        "previousName": "NEGATIVE"
+      },
+      "widgets_values": [
+        "NEGATIVE"
+      ]
+    },
+    {
+      "id": 32,
+      "type": "GetNode",
+      "pos": [
+        369,
+        588
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 13,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            36
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_POS_RAW",
+      "properties": {},
+      "widgets_values": [
+        "POS_RAW"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "LoadImage",
+      "pos": [
+        763.576799113281,
+        1646.0770252890625
+      ],
+      "size": {
+        "0": 310,
+        "1": 500
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            26
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "1d7cffd035c9275bfb7a046cb18bfadc (4).jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 27,
+      "type": "List of strings [Crystools]",
+      "pos": [
+        536.8559005859374,
+        514.3139875976549
+      ],
+      "size": [
+        315,
+        270
+      ],
+      "flags": {},
+      "order": 26,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "string_1",
+          "type": "STRING",
+          "link": 34,
+          "widget": {
+            "name": "string_1"
+          }
+        },
+        {
+          "name": "string_2",
+          "type": "STRING",
+          "link": 36,
+          "widget": {
+            "name": "string_2"
+          }
+        },
+        {
+          "name": "string_3",
+          "type": "STRING",
+          "link": 39,
+          "widget": {
+            "name": "string_3"
+          },
+          "slot_index": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "concatenated",
+          "type": "STRING",
+          "links": [
+            28
+          ],
+          "shape": 3,
+          "slot_index": 0
+        },
+        {
+          "name": "list_string",
+          "type": "ListString",
+          "links": null,
+          "shape": 6
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "List of strings [Crystools]"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        " "
+      ]
+    },
+    {
+      "id": 35,
+      "type": "SetNode",
+      "pos": [
+        584.495411223144,
+        967.3039123632814
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 27,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "link": 37,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "*",
+          "type": "*",
+          "links": null
+        }
+      ],
+      "title": "Set_POS_EASY",
+      "properties": {
+        "previousName": "POS_EASY"
+      },
+      "widgets_values": [
+        "POS_EASY"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "GetNode",
+      "pos": [
+        364,
+        632
+      ],
+      "size": {
+        "0": 210,
+        "1": 58
+      },
+      "flags": {
+        "collapsed": true
+      },
+      "order": 15,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "title": "Get_POS_EASY",
+      "properties": {},
+      "widgets_values": [
+        "POS_EASY"
+      ]
+    },
+    {
+      "id": 34,
+      "type": "OneButtonPrompt",
+      "pos": [
+        254.4954112231441,
+        938.3039123632813
+      ],
+      "size": {
+        "0": 315,
+        "1": 410
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 4,
+      "outputs": [
+        {
+          "name": "prompt",
+          "type": "STRING",
+          "links": [
+            37
+          ],
+          "shape": 3
+        },
+        {
+          "name": "prompt_g",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        },
+        {
+          "name": "prompt_l",
+          "type": "STRING",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "OneButtonPrompt"
+      },
+      "widgets_values": [
+        5,
+        "all",
+        "all",
+        20,
+        "all",
+        "",
+        "",
+        "all",
+        "all",
+        "all",
+        "all",
+        false,
+        423688861318889,
+        "randomize"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "WD14Tagger|pysssss",
+      "pos": [
+        341.0000038146972,
+        1815.2049827921878
+      ],
+      "size": [
+        321.7747900390623,
+        306.1812011718748
+      ],
+      "flags": {},
+      "order": 22,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 31,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": [
+            33
+          ],
+          "shape": 6,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "WD14Tagger|pysssss"
+      },
+      "widgets_values": [
+        "wd-v1-4-moat-tagger-v2",
+        0.35,
+        0.85,
+        false,
+        false,
+        "",
+        "1girl, solo, long_hair, looking_at_viewer, black_hair, hair_ornament, jewelry, closed_mouth, yellow_eyes, upper_body, braid, necklace, blurry, lips, orange_eyes, tattoo, colored_skin, facial_mark, rain, beads, nose, bandaid_on_face, headdress, facepaint, green_skin, facial_tattoo, bandaid_on_nose, bodypaint, dreadlocks, tribal, tooth_necklace, multiple_braids"
+      ]
+    },
+    {
+      "id": 12,
+      "type": "SaveImage",
+      "pos": [
+        1243.5469237841876,
+        997.4182227031431
+      ],
+      "size": [
+        688.3996040969823,
+        1185.2341305729494
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 23
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI/instantID"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "IDBaseModelLoader_local",
+      "pos": [
+        1005.1561738115223,
+        496.0922056253904
+      ],
+      "size": {
+        "0": 310,
+        "1": 60
+      },
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "controlnet",
+          "type": "MODEL",
+          "link": 11,
+          "slot_index": 0
+        }
+      ],
+      "outputs": [
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "links": [
+            10
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDBaseModelLoader_local"
+      },
+      "widgets_values": [
+        "SDXL\\TURBO\\turbovisionxlSuperFastXLBasedOnNew_tvxlV431Bakedvae.safetensors"
+      ]
+    },
+    {
+      "id": 6,
+      "type": "IDGenerationNode",
+      "pos": [
+        1613.1540956375002,
+        495.1541575671879
+      ],
+      "size": {
+        "0": 330,
+        "1": 302
+      },
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "face_image",
+          "type": "IMAGE",
+          "link": 17,
+          "slot_index": 0
+        },
+        {
+          "name": "pipe",
+          "type": "MODEL",
+          "link": 15
+        },
+        {
+          "name": "insightface",
+          "type": "INSIGHTFACEMODEL",
+          "link": 25
+        },
+        {
+          "name": "pose_image_optional",
+          "type": "IMAGE",
+          "link": 27,
+          "slot_index": 3
+        },
+        {
+          "name": "positive",
+          "type": "STRING",
+          "link": 21,
+          "widget": {
+            "name": "positive"
+          }
+        },
+        {
+          "name": "negative",
+          "type": "STRING",
+          "link": 20,
+          "widget": {
+            "name": "negative"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            22
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "IDGenerationNode"
+      },
+      "widgets_values": [
+        "",
+        "",
+        0.8,
+        0.8,
+        20,
+        2,
+        true,
+        126065470569864,
+        "randomize"
+      ]
+    }
+  ],
+  "links": [
+    [
+      10,
+      10,
+      0,
+      4,
+      0,
+      "MODEL"
+    ],
+    [
+      11,
+      2,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      14,
+      4,
+      0,
+      13,
+      0,
+      "*"
+    ],
+    [
+      15,
+      15,
+      0,
+      6,
+      1,
+      "MODEL"
+    ],
+    [
+      16,
+      7,
+      0,
+      16,
+      0,
+      "*"
+    ],
+    [
+      17,
+      17,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      5,
+      1,
+      20,
+      0,
+      "*"
+    ],
+    [
+      20,
+      18,
+      0,
+      6,
+      5,
+      "STRING"
+    ],
+    [
+      21,
+      21,
+      0,
+      6,
+      4,
+      "STRING"
+    ],
+    [
+      22,
+      6,
+      0,
+      22,
+      0,
+      "*"
+    ],
+    [
+      23,
+      23,
+      0,
+      12,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      1,
+      0,
+      24,
+      0,
+      "*"
+    ],
+    [
+      25,
+      25,
+      0,
+      6,
+      2,
+      "INSIGHTFACEMODEL"
+    ],
+    [
+      26,
+      8,
+      0,
+      26,
+      0,
+      "*"
+    ],
+    [
+      27,
+      14,
+      0,
+      6,
+      3,
+      "IMAGE"
+    ],
+    [
+      28,
+      27,
+      0,
+      19,
+      0,
+      "STRING"
+    ],
+    [
+      31,
+      29,
+      0,
+      28,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      28,
+      0,
+      30,
+      0,
+      "*"
+    ],
+    [
+      34,
+      31,
+      0,
+      27,
+      0,
+      "STRING"
+    ],
+    [
+      35,
+      5,
+      0,
+      33,
+      0,
+      "*"
+    ],
+    [
+      36,
+      32,
+      0,
+      27,
+      1,
+      "STRING"
+    ],
+    [
+      37,
+      34,
+      0,
+      35,
+      0,
+      "*"
+    ],
+    [
+      39,
+      36,
+      0,
+      27,
+      2,
+      "STRING"
+    ]
+  ],
+  "groups": [
+    {
+      "title": "BIG BOYS",
+      "bounding": [
+        1111,
+        304,
+        260,
+        460
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "FINAL",
+      "bounding": [
+        1207,
+        874,
+        780,
+        269
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "THE HERO",
+      "bounding": [
+        1507,
+        399,
+        410,
+        422
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "YOUR FACE",
+      "bounding": [
+        853,
+        921,
+        162,
+        573
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "YOUR POSE",
+      "bounding": [
+        856,
+        1525,
+        163,
+        696
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "USE IF YOU ARE LAZY",
+      "bounding": [
+        61,
+        1741,
+        566,
+        156
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "PLUG MORE IF YOU WANT",
+      "bounding": [
+        464,
+        433,
+        404,
+        290
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "PROMPT",
+      "bounding": [
+        348,
+        1380,
+        250,
+        306
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    },
+    {
+      "title": "PLUG OR DELETE",
+      "bounding": [
+        382,
+        849,
+        228,
+        184
+      ],
+      "color": "#3f789e",
+      "font_size": 24,
+      "locked": false
+    }
+  ],
+  "config": {},
+  "extra": {
+    "groupNodes": {
+      "test::UD_POST_PROCESS::POST EFFECT": {
+        "config": {
+          "0": {
+            "input": {
+              "float": {
+                "name": "Intensity"
+              }
+            }
+          },
+          "1": {
+            "input": {
+              "int": {
+                "name": "Radius"
+              }
+            }
+          },
+          "2": {
+            "input": {
+              "float": {
+                "name": "Film Grain Intensity"
+              }
+            }
+          },
+          "3": {
+            "input": {
+              "float": {
+                "name": "Film Grain Tempreture"
+              }
+            }
+          },
+          "4": {
+            "input": {
+              "float": {
+                "name": "VIGNETTE"
+              }
+            }
+          },
+          "5": {
+            "input": {
+              "int": {
+                "name": "Red Shift"
+              }
+            }
+          },
+          "6": {
+            "input": {
+              "int": {
+                "name": "Green Shift"
+              }
+            }
+          },
+          "7": {
+            "input": {
+              "int": {
+                "name": "BLUE SHIFT"
+              }
+            }
+          }
+        },
+        "external": [
+          [
+            0,
+            0,
+            "FLOAT"
+          ],
+          [
+            1,
+            0,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            "FLOAT"
+          ],
+          [
+            3,
+            0,
+            "FLOAT"
+          ],
+          [
+            4,
+            0,
+            "FLOAT"
+          ],
+          [
+            5,
+            0,
+            "INT"
+          ],
+          [
+            6,
+            0,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            "INT"
+          ]
+        ],
+        "links": [],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 17,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1525,
+              -809
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL GLOW INTENSITY",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0.5
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 18,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1528,
+              -707
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL GLOW RADIUS",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              7
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 19,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1526,
+              -602
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL FILM GRAN INTENSIETY",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0.01
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "mode": 0,
+            "order": 20,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1524,
+              -502
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "FILM GRAIN TEMPRETURE",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "mode": 0,
+            "order": 21,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1533,
+              -389
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "VIGNETTE",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "mode": 0,
+            "order": 22,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1533,
+              -240
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "RED SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "mode": 0,
+            "order": 23,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1539,
+              -137
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GREEN SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "mode": 0,
+            "order": 24,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1535,
+              -32
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "BLUE SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          }
+        ]
+      },
+      "UD_POST_EFFECT::POST EFFECT": {
+        "config": {
+          "0": {
+            "input": {
+              "float": {
+                "name": "Intensity"
+              }
+            }
+          },
+          "1": {
+            "input": {
+              "int": {
+                "name": "Radius"
+              }
+            }
+          },
+          "2": {
+            "input": {
+              "float": {
+                "name": "Film Grain Intensity"
+              }
+            }
+          },
+          "3": {
+            "input": {
+              "float": {
+                "name": "Film Grain Tempreture"
+              }
+            }
+          },
+          "4": {
+            "input": {
+              "float": {
+                "name": "VIGNETTE"
+              }
+            }
+          },
+          "5": {
+            "input": {
+              "int": {
+                "name": "Red Shift"
+              }
+            }
+          },
+          "6": {
+            "input": {
+              "int": {
+                "name": "Green Shift"
+              }
+            }
+          },
+          "7": {
+            "input": {
+              "int": {
+                "name": "BLUE SHIFT"
+              }
+            }
+          }
+        },
+        "external": [
+          [
+            0,
+            0,
+            "FLOAT"
+          ],
+          [
+            1,
+            0,
+            "INT"
+          ],
+          [
+            2,
+            0,
+            "FLOAT"
+          ],
+          [
+            3,
+            0,
+            "FLOAT"
+          ],
+          [
+            4,
+            0,
+            "FLOAT"
+          ],
+          [
+            5,
+            0,
+            "INT"
+          ],
+          [
+            6,
+            0,
+            "INT"
+          ],
+          [
+            7,
+            0,
+            "INT"
+          ]
+        ],
+        "links": [],
+        "nodes": [
+          {
+            "flags": {},
+            "index": 0,
+            "mode": 0,
+            "order": 17,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1525,
+              -809
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL GLOW INTENSITY",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0.5
+            ]
+          },
+          {
+            "flags": {},
+            "index": 1,
+            "mode": 0,
+            "order": 18,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1528,
+              -707
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL GLOW RADIUS",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              7
+            ]
+          },
+          {
+            "flags": {},
+            "index": 2,
+            "mode": 0,
+            "order": 19,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1526,
+              -602
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GLOBAL FILM GRAN INTENSIETY",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0.01
+            ]
+          },
+          {
+            "flags": {},
+            "index": 3,
+            "mode": 0,
+            "order": 20,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1524,
+              -502
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "FILM GRAIN TEMPRETURE",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 4,
+            "mode": 0,
+            "order": 21,
+            "outputs": [
+              {
+                "links": [],
+                "name": "float",
+                "shape": 3,
+                "slot_index": 0,
+                "type": "FLOAT"
+              }
+            ],
+            "pos": [
+              1533,
+              -389
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive float [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "VIGNETTE",
+            "type": "Primitive float [Crystools]",
+            "widgets_values": [
+              0
+            ]
+          },
+          {
+            "flags": {},
+            "index": 5,
+            "mode": 0,
+            "order": 22,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1533,
+              -240
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "RED SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 6,
+            "mode": 0,
+            "order": 23,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1539,
+              -137
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "GREEN SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          },
+          {
+            "flags": {},
+            "index": 7,
+            "mode": 0,
+            "order": 24,
+            "outputs": [
+              {
+                "links": [],
+                "name": "int",
+                "shape": 3,
+                "type": "INT"
+              }
+            ],
+            "pos": [
+              1535,
+              -32
+            ],
+            "properties": {
+              "Node name for S&R": "Primitive integer [Crystools]"
+            },
+            "size": {
+              "0": 315,
+              "1": 58
+            },
+            "title": "BLUE SHIFT",
+            "type": "Primitive integer [Crystools]",
+            "widgets_values": [
+              1
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "version": 0.4
+}
